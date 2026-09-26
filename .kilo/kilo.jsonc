@@ -33,6 +33,8 @@
     "paths": [".kilo/skills"]
   },
   "default_agent": "orchestrator",
+  "model": "freellmapi/llama-3.3-70b-instruct",
+  "small_model": "freellmapi/llama-3.2-3b",
   "web_search": true,
   "reasoning_display": "preview",
   "terminal_command_display": "collapsed",
