@@ -78,11 +78,17 @@ async def call_rhino_tool(request: ToolCallRequest) -> dict[str, Any]:
     """Forward one tool call to Rhino MCP when a server is available."""
     client = RhinoMCPClient(get_config())
     try:
+        await client.connect()
+        await client.initialize()
         result = await client.call_tool(request.name, request.arguments)
         return result.model_dump(by_alias=True, exclude_none=True)
     except MCPError as error:
         await _record_tool_failure(request.name, error)
-        return {"status": "error", "message": str(error), "retryable": isinstance(error, (MCPError,))}
+        return {
+            "status": "error",
+            "message": str(error),
+            "retryable": bool(getattr(error, "isRetryable", False)),
+        }
     except Exception as error:
         await _record_tool_failure(request.name, error)
         raise
