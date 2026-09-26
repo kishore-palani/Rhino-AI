@@ -1,0 +1,101 @@
+{
+  "schema_version": "0.1.0",
+  "skill_id": "create_window",
+  "name": "Create Window",
+  "description": "Cut a rectangular window opening through an existing wall and place a frame and glazing pane.",
+  "skill_type": "create",
+  "category": "architecture",
+  "inputs": ["wall_guid", "position", "width", "height", "sill_height"],
+  "outputs": ["window_guid", "opening_guid", "frame_guid", "glazing_guid"],
+  "parameters": {
+    "wall_guid": {
+      "type": "guid",
+      "required": true,
+      "description": "GUID of the host wall object to cut and attach the window to.",
+      "geometry_role": "host_wall"
+    },
+    "position": {
+      "type": "number",
+      "required": true,
+      "description": "Distance along the wall baseline from the wall start to the window center.",
+      "minimum": 0,
+      "units": "model_units"
+    },
+    "width": {
+      "type": "number",
+      "required": true,
+      "description": "Clear opening width of the window.",
+      "minimum": 0,
+      "units": "model_units"
+    },
+    "height": {
+      "type": "number",
+      "required": true,
+      "description": "Clear opening height of the window.",
+      "minimum": 0,
+      "units": "model_units"
+    },
+    "sill_height": {
+      "type": "number",
+      "required": true,
+      "description": "Height of the window sill above the floor.",
+      "minimum": 0,
+      "units": "model_units"
+    }
+  },
+  "preconditions": [
+    "document_connected",
+    "valid_guid",
+    "wall_exists",
+    "opening_fits_wall",
+    "positive_width",
+    "positive_height",
+    "positive_sill_height",
+    "scope_allowed"
+  ],
+  "operations": [
+    "resolve_units",
+    "create_opening_profile",
+    "boolean_difference",
+    "create_window_frame",
+    "create_glazing_pane",
+    "add_brep_to_document"
+  ],
+  "validation": [
+    "valid_brep",
+    "expected_object_count",
+    "required_relationships",
+    "document_state_consistent"
+  ],
+  "failure_modes": [
+    "missing_input",
+    "invalid_parameter",
+    "unit_mismatch",
+    "precondition_failed",
+    "permission_denied",
+    "tool_unavailable",
+    "execution_failed",
+    "invalid_guid",
+    "boolean_failed",
+    "invalid_brep",
+    "dimension_mismatch",
+    "rollback_failed"
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "status": "experimental",
+    "author": "AI RHINO ARCHITECT",
+    "risk_level": "high",
+    "side_effects": [
+      "modify host wall Brep with opening",
+      "add window frame Brep to Rhino document",
+      "add glazing pane Brep to Rhino document"
+    ],
+    "rhino_tools": ["boolean_difference", "create_object", "analyze_objects"],
+    "grasshopper_tools": [],
+    "tags": ["architecture", "window", "opening", "boolean", "hosted", "glazing"],
+    "references": ["docs/architecture.md", "docs/rhino_integration.md"],
+    "created_at": "2026-09-25T10:22:35Z",
+    "updated_at": "2026-09-25T10:22:35Z"
+  }
+}

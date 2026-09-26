@@ -1,0 +1,69 @@
+{
+  "schema_version": "0.1.0",
+  "skill_id": "create_curve",
+  "name": "Create Curve",
+  "description": "Create a NURBS curve through an ordered list of control points in the active Rhino document.",
+  "skill_type": "create",
+  "category": "geometry",
+  "inputs": ["points", "degree"],
+  "outputs": ["curve_guid", "curve_ref"],
+  "parameters": {
+    "points": {
+      "type": "list",
+      "required": true,
+      "description": "Ordered list of through points for the curve.",
+      "geometry_role": "control_points"
+    },
+    "degree": {
+      "type": "integer",
+      "required": false,
+      "description": "NURBS curve degree; higher values produce smoother curves.",
+      "default": 3,
+      "minimum": 1,
+      "maximum": 11,
+      "units": "dimensionless"
+    }
+  },
+  "preconditions": [
+    "document_connected",
+    "sufficient_points",
+    "valid_point",
+    "scope_allowed"
+  ],
+  "operations": [
+    "resolve_units",
+    "create_curve",
+    "add_curve_to_document"
+  ],
+  "validation": [
+    "valid_curve",
+    "expected_object_count",
+    "document_state_consistent"
+  ],
+  "failure_modes": [
+    "missing_input",
+    "invalid_parameter",
+    "unit_mismatch",
+    "precondition_failed",
+    "permission_denied",
+    "tool_unavailable",
+    "execution_failed",
+    "invalid_curve",
+    "insufficient_points",
+    "dimension_mismatch",
+    "rollback_failed"
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "status": "experimental",
+    "author": "AI RHINO ARCHITECT",
+    "risk_level": "low",
+    "side_effects": ["add NURBS curve to Rhino document"],
+    "rhino_tools": ["create_object", "analyze_objects"],
+    "grasshopper_tools": [],
+    "tags": ["geometry", "curve", "nurbs", "interpolation"],
+    "references": ["docs/rhino_integration.md", "docs/architecture.md"],
+    "created_at": "2026-09-25T10:22:35Z",
+    "updated_at": "2026-09-25T10:22:35Z"
+  }
+}

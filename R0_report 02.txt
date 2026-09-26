@@ -1,0 +1,1007 @@
+# AI RHINO ARCHITECT — Project Summary Report
+
+### Current Project Status: V0.9.16 / Transition Toward V1.0 Production
+
+## 1. Executive Summary
+
+**AI RHINO ARCHITECT** is being developed as an AI-powered architectural design and reasoning system integrated directly with **Rhino 8 Desktop**.
+
+The project has evolved from a Rhino automation concept into a controlled architectural intelligence platform capable of:
+
+* understanding architectural intent
+* analyzing Rhino geometry
+* managing design constraints
+* protecting geometry
+* generating design alternatives
+* evaluating consequences
+* maintaining project history
+* reasoning through a knowledge graph
+* performing controlled iterations
+* operating under bounded autonomy
+* interacting through a conversational Copilot
+* executing approved changes through Rhino
+* auditing decisions and execution
+
+The fundamental architectural principle is:
+
+> **AI RHINO ARCHITECT should reason about design, propose actions, and execute only through controlled and verifiable CAD workflows.**
+
+The project is now transitioning from **core intelligence development** toward **real MCP execution, systematic testing, AI training/evaluation, deployment, and production hardening**.
+
+---
+
+# 2. Project Evolution
+
+```text
+V0.9.5
+Safety / Transactions
+        ↓
+V0.9.8
+Evidence & Reasoning Reliability
+        ↓
+V0.9.9
+Project Orchestration
+        ↓
+V0.9.10
+Design Options
+        ↓
+V0.9.11
+Iterative Design Optimization
+        ↓
+V0.9.12
+Controlled Autonomy
+        ↓
+V0.9.13
+Persistent Project Intelligence
+        ↓
+V0.9.14
+Architectural Knowledge Graph
+        ↓
+V0.9.15
+Rhino UI & Interactive Intelligence
+        ↓
+V0.9.16
+Conversational Architectural Copilot
+        ↓
+V0.9.17
+Multimodal Architectural Context
+        ↓
+V0.9.18–V0.9.27
+Training / Testing / Deployment
+        ↓
+V1.0.0
+Production AI RHINO ARCHITECT
+```
+
+---
+
+# 3. Core Architecture
+
+The current conceptual architecture is:
+
+```text
+                    USER / ARCHITECT
+                           │
+                           ▼
+                 CONVERSATIONAL COPILOT
+                           │
+                           ▼
+                  INTENT INTERPRETATION
+                           │
+                           ▼
+                  CONTEXT RESOLUTION
+                           │
+          ┌────────────────┼────────────────┐
+          ▼                ▼                ▼
+       RHINO         PROJECT INTEL.    KNOWLEDGE GRAPH
+          │                │                │
+          └────────────────┼────────────────┘
+                           ▼
+                    TASK ORCHESTRATION
+                           │
+                           ▼
+                    DESIGN OPTIONS
+                           │
+                           ▼
+                    IMPACT ANALYSIS
+                           │
+                           ▼
+                     PROPOSAL
+                           │
+                           ▼
+                     USER REVIEW
+                           │
+                           ▼
+                  AUTONOMY GOVERNANCE
+                           │
+                           ▼
+                    AUTHORIZATION
+                           │
+                           ▼
+                    DESIGN PROTECTION
+                           │
+                           ▼
+                    EXECUTION PERMIT
+                           │
+                           ▼
+                    DESIGN TRANSACTION
+                           │
+                           ▼
+                        RHINO 8
+                           │
+                           ▼
+                     OBSERVATION
+                           │
+                           ▼
+                      EVALUATION
+                           │
+                           ▼
+                       ITERATION
+                           │
+                           ▼
+                 PROJECT INTELLIGENCE
+```
+
+This architecture intentionally separates **reasoning from execution**.
+
+---
+
+# 4. Major Systems Completed
+
+## V0.9.5–V0.9.8 — Safety and Reasoning Foundation
+
+Established the foundational governance architecture:
+
+* `DesignTransaction`
+* `ExecutionPermit`
+* `DesignProtection`
+* `ArchitecturalEvidenceGraph`
+* `DesignHypothesis`
+* `ArchitecturalEvaluation`
+* `ReasoningTrace`
+* `DesignQualityMemory`
+
+The system established the principle:
+
+```text
+AI reasoning
+      ≠
+CAD mutation
+```
+
+and created the foundation for evidence-backed architectural reasoning.
+
+---
+
+# 5. V0.9.9 — Project Orchestration
+
+Introduced project-level orchestration.
+
+Major components:
+
+* ProjectIntent
+* ArchitecturalTask
+* ArchitecturalTaskGraph
+* TaskDecomposer
+* DependencyAnalyzer
+* ExecutionPlanner
+* DesignCoordinator
+* CrossTaskEvaluator
+* ProjectState
+* OrchestrationMemory
+
+The system can now reason about a project as a **connected set of architectural tasks** rather than isolated commands.
+
+Critical invariant:
+
+```text
+LOCAL SUCCESS ≠ GLOBAL SUCCESS
+```
+
+Verified milestone:
+
+* **243/243 automated tests**
+* **120/120 live Rhino tests**
+
+---
+
+# 6. V0.9.10 — Design Options
+
+Introduced controlled alternative generation.
+
+Major components:
+
+* DesignOption
+* AdaptiveStrategyGenerator
+* OptionManager
+* OptionComparator
+* ConsequenceAnalyzer
+* OptionValidator
+* OptionRevision
+* OptionMemory
+
+The system can generate multiple architectural strategies and compare their:
+
+* spatial consequences
+* visual consequences
+* material consequences
+* functional consequences
+* geometric consequences
+* dependency effects
+* execution implications
+* global coherence
+
+Critical principle:
+
+> Option generation does not mutate Rhino.
+
+Verified milestone:
+
+* **279/279 automated tests**
+* **145/145 live Rhino tests**
+
+---
+
+# 7. V0.9.11 — Iterative Design Optimization
+
+Introduced a closed design-feedback loop.
+
+Major components:
+
+* DesignIteration
+* ObservationAnalyzer
+* DesignDeficiencyDetector
+* ImprovementHypothesisGenerator
+* IterationPlanner
+* ConvergenceTracker
+* IterationMemory
+* IterationEngine
+
+The system distinguishes:
+
+```text
+PREDICTED RESULT
+        ≠
+OBSERVED RESULT
+```
+
+It also prevents uncontrolled infinite design modification.
+
+Stopping conditions include:
+
+* target achieved
+* no meaningful improvement
+* iteration limit
+* constraint conflict
+* global coherence failure
+* user review required
+* execution failure
+
+Verified milestone:
+
+* **314/314 automated tests**
+* **180/180 live Rhino tests**
+
+---
+
+# 8. V0.9.12 — Controlled Autonomous Design
+
+Introduced bounded autonomy.
+
+Major components:
+
+* AutonomyLevel
+* AutonomyPolicy
+* AutonomyBoundary
+* RiskAnalyzer
+* ActionAuthorizer
+* DesignGoalManager
+* ApprovalManager
+* InterventionManager
+* AutonomySession
+* AutonomyAudit
+* AutonomousDecisionEngine
+
+Autonomy levels were explicitly separated from normal reasoning.
+
+The system now considers:
+
+```text
+RISK
++
+AUTHORIZATION
++
+APPROVAL
++
+PROTECTION
++
+REVERSIBILITY
++
+ACTION BOUNDARIES
+```
+
+Critical principle:
+
+> **Risk does not override constraints.**
+
+Verified milestone:
+
+* **354/354 automated tests**
+* **245/245 live Rhino tests**
+
+---
+
+# 9. V0.9.13 — Persistent Project Intelligence
+
+Introduced long-term project memory.
+
+Major capabilities:
+
+* architectural ontology
+* knowledge items
+* decision registry
+* constraint registry
+* design history
+* project snapshots
+* project reconstruction
+* conflict resolution
+* knowledge validation
+* structured knowledge retrieval
+* project health
+
+The system distinguishes:
+
+```text
+FACT
+INFERENCE
+OBSERVATION
+HISTORY
+CURRENT STATE
+STALE KNOWLEDGE
+```
+
+Authority hierarchy:
+
+```text
+CURRENT USER INSTRUCTION
+        >
+CURRENT PROJECT CONSTRAINT
+        >
+CURRENT PROTECTED STATE
+        >
+CURRENT APPROVED DESIGN
+        >
+CURRENT VERIFIED EVALUATION
+        >
+CURRENT ITERATION
+        >
+CURRENT OPTION
+        >
+RECENT VERIFIED KNOWLEDGE
+        >
+HISTORICAL KNOWLEDGE
+        >
+INFERENCE
+        >
+STALE MEMORY
+```
+
+Verified milestone:
+
+* **394/394 automated tests**
+* **314/314 live Rhino tests**
+
+---
+
+# 10. V0.9.14 — Architectural Knowledge Graph
+
+Introduced semantic architectural reasoning.
+
+The knowledge graph contains:
+
+* **28 architectural entity types**
+* **36 explicit semantic relationship types**
+
+Major components:
+
+* GraphSchema
+* ArchitecturalKnowledgeGraph
+* GraphBuilder
+* GraphStore
+* GraphTraversal
+* SemanticQueryEngine
+* ImpactAnalyzer
+* DependencyReasoner
+* CausalReasoner
+* SemanticReasoner
+* GraphHealthDiagnostics
+* GraphSnapshot
+* GraphReconstructor
+* KnowledgeGraphEngine
+
+The graph supports questions such as:
+
+> Why is this element protected?
+
+> What tasks depend on this wall?
+
+> What decisions would be affected?
+
+> What happens if this element changes?
+
+Verified milestone:
+
+* **439/439 automated tests**
+* **394/394 live Rhino tests**
+
+---
+
+# 11. V0.9.15 — Rhino UI & Interactive Architectural Intelligence
+
+The system gained a functional Rhino desktop interface.
+
+Main UI:
+
+```text
+MainPanelConsole
+```
+
+Tabs include:
+
+* Dashboard
+* Project
+* Tasks
+* Options
+* Decisions
+* Knowledge
+* Graph
+* Impact
+* Iteration
+* Autonomy
+* Evidence
+* Demo
+
+Rhino command:
+
+```text
+AIRHINO
+```
+
+The UI also includes:
+
+* DashboardView
+* UI formatters
+* DemoController
+* UICommandRouter
+* Rhino MCP integration
+* MCP gateway
+
+Reported milestone:
+
+* **431/431 automated tests**
+* **444/444 live Rhino tests**
+
+---
+
+# 12. V0.9.16 — Conversational Architectural Copilot
+
+The next major interface layer is the **Copilot**.
+
+Its purpose is to allow an architect to communicate with AI RHINO ARCHITECT naturally.
+
+Example:
+
+> "Make the entrance more contemporary while keeping the existing columns unchanged."
+
+The intended processing pipeline is:
+
+```text
+USER REQUEST
+      ↓
+REQUEST CLASSIFICATION
+      ↓
+INTENT
+      ↓
+AMBIGUITY
+      ↓
+CURRENT CONTEXT
+      ↓
+CONSTRAINTS
+      ↓
+PROTECTED ELEMENTS
+      ↓
+TASKS
+      ↓
+OPTIONS
+      ↓
+IMPACT
+      ↓
+PROPOSAL
+      ↓
+APPROVAL
+      ↓
+AUTHORIZATION
+      ↓
+EXECUTION
+```
+
+Critical invariant:
+
+```text
+NATURAL LANGUAGE ≠ AUTHORIZATION
+```
+
+---
+
+# 13. Current Critical Integration Issue
+
+The latest testing exposed an important MCP integration problem.
+
+The Copilot UI reached the tool execution stage but generated an invalid call to an MCP `write` tool.
+
+The reported error was:
+
+```text
+"content" is missing
+"filePath" is missing
+```
+
+This is important because it indicates the system is now reaching the **real tool-dispatch layer**, rather than merely displaying simulated responses.
+
+The current investigation needs to determine whether:
+
+### Problem A
+
+The correct MCP `write` tool was selected but received malformed arguments.
+
+or:
+
+### Problem B
+
+The architectural request was incorrectly routed to a generic filesystem `write` tool instead of a Rhino-specific execution tool.
+
+The correct fix is therefore to inspect:
+
+```text
+Copilot
+ ↓
+Tool Selection
+ ↓
+MCP Tool Schema
+ ↓
+Argument Generation
+ ↓
+MCP Gateway
+ ↓
+RhinoMcpServer
+```
+
+rather than simply hiding the error in the UI.
+
+---
+
+# 14. Real MCP Execution Objective
+
+The Copilot is being transitioned from:
+
+```text
+FAKE / SIMULATED UI RESPONSE
+```
+
+to:
+
+```text
+REAL USER REQUEST
+        ↓
+REAL MCP REQUEST
+        ↓
+REAL BACKEND
+        ↓
+REAL RHINO TOOL
+        ↓
+REAL RHINO EXECUTION
+        ↓
+REAL RESULT
+        ↓
+REAL UI RESPONSE
+```
+
+The required invariant is:
+
+```text
+WHAT USER TYPES
+        =
+WHAT MCP RECEIVES
+```
+
+and:
+
+```text
+WHAT BACKEND REPORTS
+        =
+WHAT ACTUALLY HAPPENED IN RHINO
+```
+
+---
+
+# 15. MCP Integration Architecture
+
+The target production architecture is:
+
+```text
+                    COPILOT UI
+                        │
+                        ▼
+                 COPILOT REQUEST
+                        │
+                        ▼
+                  MCP GATEWAY
+                        │
+              ┌─────────┴─────────┐
+              ▼                   ▼
+        QUERY TOOLS          RHINO TOOLS
+              │                   │
+              │                   ▼
+              │              RhinoMcpServer
+              │                   │
+              │                   ▼
+              │               RhinoCommon
+              │                   │
+              │                   ▼
+              │                 Rhino
+              │
+              ▼
+       Project Intelligence
+       Knowledge Graph
+       Options / Evaluation
+```
+
+A major engineering requirement is **single-source-of-truth MCP tool schemas**, preventing client/server schema drift.
+
+---
+
+# 16. Testing and Training Roadmap
+
+The project is now preparing for a dedicated development/testing/training lifecycle.
+
+Planned versions:
+
+| Version    | Focus                                    |
+| ---------- | ---------------------------------------- |
+| V0.9.16    | Conversational Copilot                   |
+| V0.9.17    | Multimodal Architectural Context         |
+| V0.9.18    | AI Training & Evaluation Infrastructure  |
+| V0.9.19    | Architectural Dataset / Scenario Library |
+| V0.9.20    | AI Agent Benchmark Engine                |
+| V0.9.21    | Adversarial & Safety Testing             |
+| V0.9.22    | Architect-in-the-Loop Evaluation         |
+| V0.9.23    | Rhino Runtime Performance                |
+| V0.9.24    | Plugin Packaging & Deployment            |
+| V0.9.25    | Controlled Beta                          |
+| V0.9.26    | Diagnostics & Continuous Evaluation      |
+| V0.9.27    | Release Candidate                        |
+| **V1.0.0** | **Production Release**                   |
+
+---
+
+# 17. Planned AI Training Infrastructure
+
+The project should eventually maintain a dedicated training/evaluation system containing:
+
+```text
+architectural scenarios
+Rhino scenarios
+conversation scenarios
+constraint scenarios
+design-option scenarios
+iteration scenarios
+autonomy scenarios
+safety scenarios
+failure cases
+multimodal scenarios
+```
+
+Each scenario should record:
+
+```text
+PROJECT CONTEXT
++
+RHINO STATE
++
+USER REQUEST
++
+SELECTION
++
+CONSTRAINTS
++
+PROTECTED ELEMENTS
++
+EXPECTED INTENT
++
+EXPECTED TASK
++
+EXPECTED OPTIONS
++
+EXPECTED IMPACT
++
+EXPECTED AUTHORIZATION
++
+EXPECTED RESULT
++
+FORBIDDEN ACTIONS
+```
+
+This allows AI behavior to be evaluated systematically instead of relying only on subjective demonstrations.
+
+---
+
+# 18. Proposed AI Evaluation Metrics
+
+The project should avoid a single overall "AI score."
+
+Instead measure independently:
+
+```text
+Intent Accuracy
+Constraint Compliance
+Scope Accuracy
+Protection Compliance
+Authorization Compliance
+Architectural Reasoning Accuracy
+Evidence Traceability
+Execution Success
+Recovery Success
+Regression Rate
+Rhino Stability
+```
+
+This preserves the distinction between **architectural intelligence** and **software reliability**.
+
+---
+
+# 19. Testing Architecture
+
+The eventual testing system should contain:
+
+```text
+                    HUMAN ARCHITECT
+                          │
+                          ▼
+                  HUMAN EVALUATION
+                          │
+                          ▼
+                    AI BENCHMARK
+                          │
+                          ▼
+                  RHINO INTEGRATION
+                          │
+                          ▼
+                  SYSTEM INTEGRATION
+                          │
+                          ▼
+                     UNIT TESTS
+```
+
+plus continuous production regression:
+
+```text
+REAL USER
+    ↓
+FAILURE
+    ↓
+FAILURE REGISTRY
+    ↓
+DATASET
+    ↓
+REGRESSION TEST
+    ↓
+FIX
+    ↓
+NEW RELEASE
+```
+
+---
+
+# 20. Deployment Strategy
+
+The intended deployment sequence is:
+
+```text
+DEVELOPMENT
+    ↓
+INTERNAL TEST
+    ↓
+ALPHA
+    ↓
+PRIVATE BETA
+    ↓
+EXPANDED BETA
+    ↓
+RELEASE CANDIDATE
+    ↓
+V1.0 PRODUCTION
+```
+
+Each stage should have explicit release gates.
+
+---
+
+# 21. Production Plugin Vision
+
+The ultimate V1.0 system should support:
+
+### Understand
+
+Architectural language, geometry, context and project state.
+
+### Reason
+
+Constraints, dependencies, consequences and design alternatives.
+
+### Propose
+
+Generate controlled design strategies.
+
+### Explain
+
+Provide evidence, provenance and impact.
+
+### Ask
+
+Request clarification when intent is ambiguous.
+
+### Obtain approval
+
+Respect explicit user governance.
+
+### Execute
+
+Use RhinoCommon through controlled MCP tooling.
+
+### Observe
+
+Verify the actual Rhino state.
+
+### Evaluate
+
+Compare predicted and observed outcomes.
+
+### Iterate
+
+Improve the design through controlled iterations.
+
+### Remember
+
+Persist verified project knowledge without allowing memory to override current authority.
+
+---
+
+# 22. Core Safety Principles
+
+The project now has a strong set of architectural invariants:
+
+```text
+NATURAL LANGUAGE ≠ AUTHORIZATION
+
+INTENT ≠ EXECUTION
+
+CONVERSATION ≠ PROJECT TRUTH
+
+INFERENCE ≠ FACT
+
+PROPOSAL ≠ APPROVAL
+
+APPROVAL ≠ AUTHORIZATION
+
+MEMORY ≠ AUTHORIZATION
+
+GRAPH REASONING ≠ AUTHORIZATION
+
+CURRENT STATE > STALE CONTEXT
+
+PROTECTED GEOMETRY > CONVERSATIONAL REQUEST
+
+CURRENT USER INSTRUCTION > OLD MEMORY
+
+REJECTED OPTION ≠ CURRENT OPTION
+
+SUPERSEDED REVISION ≠ CURRENT REVISION
+```
+
+These principles form the governance foundation of the system.
+
+---
+
+# 23. Current Project Maturity
+
+The project has progressed beyond a basic Rhino AI assistant.
+
+It now has the conceptual components of an **architectural AI operating layer for Rhino**:
+
+```text
+                     AI RHINO ARCHITECT
+                              │
+        ┌─────────────────────┼─────────────────────┐
+        │                     │                     │
+    KNOWLEDGE              REASONING             DESIGN
+        │                     │                     │
+ Project Memory          Evidence             Options
+ Knowledge Graph         Evaluation            Iteration
+ History                 Causality             Consequences
+ Constraints             Dependencies          Optimization
+        │                     │                     │
+        └─────────────────────┼─────────────────────┘
+                              │
+                         GOVERNANCE
+                              │
+             ┌────────────────┼────────────────┐
+             │                │                │
+          Protection       Approval         Autonomy
+             │                │                │
+             └────────────────┼────────────────┘
+                              │
+                         EXECUTION
+                              │
+                         MCP Gateway
+                              │
+                         RhinoCommon
+                              │
+                           Rhino 8
+```
+
+---
+
+# 24. Immediate Priority
+
+The immediate engineering priority is **not another large architectural feature**.
+
+It is to make the current Copilot-to-MCP-to-Rhino pipeline **real, deterministic, observable and verifiable**.
+
+Specifically:
+
+1. Identify why the room-generation request reaches the wrong/incorrectly populated `write` tool.
+2. Verify the actual MCP tool schemas.
+3. Correct tool routing or argument serialization.
+4. Add schema validation.
+5. Execute a real 10 m × 12 m room creation request.
+6. Verify the resulting Rhino geometry.
+7. Verify the UI reports the actual result.
+8. Add regression tests for the failure.
+9. Establish the MCP integration as a reliable foundation for V0.9.17+.
+
+---
+
+# 25. Project End State
+
+The long-term objective can be summarized as:
+
+```text
+             ARCHITECT
+                 │
+                 ▼
+        NATURAL LANGUAGE
+                 │
+                 ▼
+      AI RHINO ARCHITECT
+                 │
+       ┌─────────┴─────────┐
+       ▼                   ▼
+   ARCHITECTURAL        RHINO 8
+   INTELLIGENCE         EXECUTION
+       │                   │
+       └─────────┬─────────┘
+                 ▼
+          CONTROLLED DESIGN
+                 │
+                 ▼
+        VERIFIED CAD STATE
+                 │
+                 ▼
+        CONTINUOUS LEARNING
+```
+
+The project is therefore moving from a **feature-rich prototype** toward a **governed, testable, trainable and deployable architectural AI platform**.
+
+The key transition now is:
+
+> **From building intelligence → to proving, training, deploying and continuously validating that intelligence in real Rhino workflows.**

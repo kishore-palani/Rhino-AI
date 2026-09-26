@@ -1,0 +1,16 @@
+{
+    "terminal.integrated.profiles.windows": {
+        "Git Bash": {
+            "path": "C:\\Program Files\\Git\\bin\\bash.exe",
+            "args": ["--login", "-i"]
+        }
+    },
+    "chat.plugins.enabled": true,
+    "chat.agentSkills.enabled": true,
+    "chat.plugins.marketplaces": [
+        "MicrosoftDocs/agent-skills"
+    ],
+    "[jsonc]": {
+        "json.validate.enable": false
+    }
+}

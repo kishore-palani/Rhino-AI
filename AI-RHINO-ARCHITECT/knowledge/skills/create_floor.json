@@ -1,0 +1,76 @@
+{
+  "schema_version": "0.1.0",
+  "skill_id": "create_floor",
+  "name": "Create Floor",
+  "description": "Create a solid floor slab by extruding a planar boundary curve downward along the document Z axis.",
+  "skill_type": "create",
+  "category": "architecture",
+  "inputs": ["boundary", "thickness"],
+  "outputs": ["floor_brep", "floor_guid"],
+  "parameters": {
+    "boundary": {
+      "type": "curve",
+      "required": true,
+      "description": "Closed planar curve defining the floor outline.",
+      "geometry_role": "boundary"
+    },
+    "thickness": {
+      "type": "number",
+      "required": true,
+      "description": "Vertical slab thickness measured downward from the boundary plane.",
+      "minimum": 0,
+      "units": "model_units"
+    }
+  },
+  "preconditions": [
+    "document_connected",
+    "valid_curve",
+    "closed_boundary",
+    "positive_thickness",
+    "scope_allowed"
+  ],
+  "operations": [
+    "resolve_units",
+    "extrude_curve",
+    "cap_brep",
+    "add_brep_to_document"
+  ],
+  "validation": [
+    "valid_brep",
+    "closed_solid",
+    "manifold",
+    "correct_dimensions",
+    "expected_object_count",
+    "document_state_consistent"
+  ],
+  "failure_modes": [
+    "missing_input",
+    "invalid_parameter",
+    "unit_mismatch",
+    "precondition_failed",
+    "permission_denied",
+    "tool_unavailable",
+    "execution_failed",
+    "invalid_curve",
+    "open_boundary",
+    "extrusion_failed",
+    "cap_failed",
+    "invalid_brep",
+    "open_solid",
+    "dimension_mismatch",
+    "rollback_failed"
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "status": "experimental",
+    "author": "AI RHINO ARCHITECT",
+    "risk_level": "medium",
+    "side_effects": ["add floor slab Brep to Rhino document"],
+    "rhino_tools": ["extrude_curve", "create_object", "analyze_objects"],
+    "grasshopper_tools": [],
+    "tags": ["architecture", "floor", "slab", "solid", "extrusion"],
+    "references": ["docs/architecture.md", "docs/rhino_integration.md"],
+    "created_at": "2026-09-25T10:22:35Z",
+    "updated_at": "2026-09-25T10:22:35Z"
+  }
+}

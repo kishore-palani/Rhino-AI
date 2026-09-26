@@ -1,0 +1,75 @@
+{
+  "schema_version": "0.1.0",
+  "skill_id": "create_rectangle",
+  "name": "Create Rectangle",
+  "description": "Create a planar rectangle polyline on the supplied construction plane in the active Rhino document.",
+  "skill_type": "create",
+  "category": "geometry",
+  "inputs": ["plane", "width", "height"],
+  "outputs": ["rectangle_guid", "rectangle_ref"],
+  "parameters": {
+    "plane": {
+      "type": "plane",
+      "required": true,
+      "description": "Construction plane on which the rectangle is built.",
+      "geometry_role": "construction_plane"
+    },
+    "width": {
+      "type": "number",
+      "required": true,
+      "description": "Rectangle extent along the plane X axis.",
+      "minimum": 0,
+      "units": "model_units"
+    },
+    "height": {
+      "type": "number",
+      "required": true,
+      "description": "Rectangle extent along the plane Y axis.",
+      "minimum": 0,
+      "units": "model_units"
+    }
+  },
+  "preconditions": [
+    "document_connected",
+    "valid_plane",
+    "positive_width",
+    "positive_height",
+    "scope_allowed"
+  ],
+  "operations": [
+    "resolve_units",
+    "create_rectangle",
+    "add_curve_to_document"
+  ],
+  "validation": [
+    "valid_curve",
+    "correct_dimensions",
+    "expected_object_count",
+    "document_state_consistent"
+  ],
+  "failure_modes": [
+    "missing_input",
+    "invalid_parameter",
+    "unit_mismatch",
+    "precondition_failed",
+    "permission_denied",
+    "tool_unavailable",
+    "execution_failed",
+    "invalid_curve",
+    "dimension_mismatch",
+    "rollback_failed"
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "status": "experimental",
+    "author": "AI RHINO ARCHITECT",
+    "risk_level": "low",
+    "side_effects": ["add rectangle polyline to Rhino document"],
+    "rhino_tools": ["create_object", "analyze_objects"],
+    "grasshopper_tools": [],
+    "tags": ["geometry", "rectangle", "primitive", "planar"],
+    "references": ["docs/rhino_integration.md", "docs/architecture.md"],
+    "created_at": "2026-09-25T10:22:35Z",
+    "updated_at": "2026-09-25T10:22:35Z"
+  }
+}

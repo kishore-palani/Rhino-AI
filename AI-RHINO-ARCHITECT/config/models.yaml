@@ -1,0 +1,98 @@
+# AI RHINO ARCHITECT - Model Configuration
+# This file defines the LLM providers and models used by the system
+
+provider:
+  name: "openai"  # Options: openai, anthropic, google, local
+
+models:
+  # Reasoning model - used for planning, architectural reasoning, tool selection
+  reasoning:
+    name: "gpt-4o"
+    temperature: 0.2
+    max_tokens: 8192
+    top_p: 1.0
+    frequency_penalty: 0.0
+    presence_penalty: 0.0
+
+  # Vision model - used for image understanding, viewport analysis
+  vision:
+    name: "gpt-4o"
+    temperature: 0.1
+    max_tokens: 4096
+    top_p: 1.0
+
+  # Video model - used for video understanding, process extraction
+  video:
+    name: "gpt-4o"
+    temperature: 0.1
+    max_tokens: 8192
+    top_p: 1.0
+
+  # Embedding model - used for RAG, semantic search
+  embedding:
+    name: "text-embedding-3-large"
+    dimensions: 3072
+
+  # Fast model - used for simple tasks, classification
+  fast:
+    name: "gpt-4o-mini"
+    temperature: 0.1
+    max_tokens: 4096
+
+  # Local model fallback (Ollama/vLLM)
+  local:
+    reasoning:
+      name: "llama3.1:70b"
+      base_url: "http://localhost:11434"
+      temperature: 0.2
+      max_tokens: 8192
+    vision:
+      name: "llava:34b"
+      base_url: "http://localhost:11434"
+      temperature: 0.1
+      max_tokens: 4096
+    embedding:
+      name: "nomic-embed-text"
+      base_url: "http://localhost:11434"
+      dimensions: 768
+
+parameters:
+  # Global defaults
+  default_temperature: 0.2
+  default_max_tokens: 4096
+  default_top_p: 1.0
+
+  # Reasoning-specific
+  reasoning_temperature: 0.2
+  reasoning_max_tokens: 8192
+
+  # Vision-specific
+  vision_temperature: 0.1
+  vision_max_tokens: 4096
+
+  # Video-specific
+  video_temperature: 0.1
+  video_max_tokens: 8192
+
+  # Retry settings
+  max_retries: 3
+  retry_delay: 1.0
+  timeout: 60.0
+
+# Provider-specific overrides
+providers:
+  openai:
+    api_version: "2024-10-01-preview"
+    organization: null
+
+  anthropic:
+    api_version: "2023-06-01"
+    max_tokens_default: 4096
+
+  google:
+    api_version: "v1beta"
+    safety_settings: "BLOCK_NONE"
+
+  local:
+    default_base_url: "http://localhost:11434"
+    timeout: 120.0

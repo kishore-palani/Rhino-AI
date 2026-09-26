@@ -1,0 +1,1867 @@
+# AI RHINO ARCHITECT
+
+## PROJECT SUMMARY & DEVELOPMENT STATUS REPORT
+
+### Project
+
+**AI RHINO ARCHITECT**
+
+### Current Development State
+
+**V0.9.3.1 — Live Rhino + Unit-System Stabilization**
+
+### Next Major Development Direction
+
+**V0.9.4 — Multimodal Architectural Vision + Reference-to-Rhino + Visual Model Editing**
+
+---
+
+# 1. EXECUTIVE SUMMARY
+
+AI RHINO ARCHITECT is an AI-driven architectural CAD and computational-design platform intended to operate as an intelligent architectural design partner inside and around **Rhino 8**.
+
+The platform has evolved from a controlled Rhino execution framework into a larger architectural intelligence system combining:
+
+```text
+Natural Language
+        ↓
+Architectural Reasoning
+        ↓
+Program / Spatial Intelligence
+        ↓
+Semantic Architectural Model
+        ↓
+Parametric / Detail Modeling
+        ↓
+MCP Tool Execution
+        ↓
+Live Rhino 8
+        ↓
+Observation
+        ↓
+Validation
+        ↓
+Critique
+        ↓
+Correction
+        ↓
+Memory
+        ↓
+Controlled Learning
+```
+
+The project is designed around a central principle:
+
+> **The AI should not merely generate geometry; it should understand architectural intent, reason about the model, execute controlled CAD operations, inspect what actually happened, validate the result, and learn only from verified experience.**
+
+The V0.9.2 audit established the core architectural-agent and closed-loop infrastructure.
+
+V0.9.3 subsequently established the live MCP ↔ Rhino 8 execution pathway.
+
+V0.9.3.1 corrected a critical dimensional-unit problem by making the actual Rhino document model units authoritative and propagating explicit unit information through the complete execution pipeline.
+
+The next stage, V0.9.4, moves toward **multimodal architectural vision**: understanding reference images, Rhino viewports, existing models, architectural patterns, facade language, materials, landscape, and design intent before making controlled Rhino modifications.
+
+---
+
+# 2. PROJECT VISION
+
+The long-term goal is to create an architectural AI capable of working across the full design workflow:
+
+```text
+SITE
+ ↓
+PROGRAM
+ ↓
+CONCEPT
+ ↓
+MASSING
+ ↓
+SPATIAL DESIGN
+ ↓
+STRUCTURE
+ ↓
+FACADE
+ ↓
+OPENINGS
+ ↓
+DETAIL
+ ↓
+DOCUMENTATION
+ ↓
+FABRICATION
+ ↓
+VISUALIZATION
+```
+
+while maintaining:
+
+```text
+ARCHITECTURAL SEMANTICS
++
+PROJECT MEMORY
++
+DESIGN DNA
++
+USER CONTROL
++
+GEOMETRIC CORRECTNESS
++
+EVIDENCE
++
+PROVENANCE
++
+REPRODUCIBILITY
+```
+
+---
+
+# 3. DEVELOPMENT EVOLUTION
+
+## Early Platform
+
+The initial development established:
+
+```text
+Rhino / Grasshopper integration
+MCP concepts
+controlled tools
+architectural geometry
+simulator
+task execution
+validation
+```
+
+The platform then expanded into multimodal data, architectural knowledge, trajectories, learning, and controlled Rhino execution.
+
+---
+
+# 4. V0.8 — CONTROLLED RHINO EXECUTION FOUNDATION
+
+The V0.8 generation established the production-oriented infrastructure required for safe CAD automation.
+
+Core systems included:
+
+```text
+Database
+Agent Orchestrator
+Task Graph
+Checkpoints
+Task Queue
+Workstation Scheduler
+Simulator
+Execution Backend
+Remote Gateway
+Workstation Discovery
+Authentication
+Capability Discovery
+Version Compatibility
+Semantic Architecture
+Multimodal Pipeline
+Constraint Engine
+Change Impact
+Memory
+Trajectory System
+Observability
+Security
+Diagnostics
+Training Data
+Evaluation Data
+```
+
+The key architectural distinction established during this stage was:
+
+```text
+SIMULATOR
+        ≠
+LIVE RHINO
+```
+
+This distinction remains fundamental to the platform.
+
+---
+
+# 5. V0.9.0 — ARCHITECTURAL INTELLIGENCE
+
+The project then shifted from a CAD execution platform toward an architectural design intelligence platform.
+
+Major concepts introduced included:
+
+```text
+Architectural Vision
+Design Language
+High-Detail Modeling
+Add Detail
+Architectural Memory
+Project Design DNA
+Precedent Intelligence
+Architecture Radar
+Program Generation
+Site Intelligence
+Facade Intelligence
+Grasshopper Copilot
+Architectural Critic
+Design Alternatives
+Multimodal Reasoning
+Controlled Self-Learning
+3D Concrete Printing Intelligence
+```
+
+The target learning cycle became:
+
+```text
+DISCOVER
+ ↓
+COLLECT
+ ↓
+UNDERSTAND
+ ↓
+STRUCTURE
+ ↓
+LEARN
+ ↓
+GENERATE
+ ↓
+EXECUTE
+ ↓
+OBSERVE
+ ↓
+MEASURE
+ ↓
+VALIDATE
+ ↓
+COMPARE
+ ↓
+CORRECT
+ ↓
+STORE EXPERIENCE
+ ↓
+UPDATE SKILLS
+ ↓
+EVALUATE
+```
+
+---
+
+# 6. V0.9.1 — INTEGRATED ARCHITECTURAL CAPABILITY PLATFORM
+
+V0.9.1 integrated the major architectural feature set.
+
+The platform established:
+
+```text
+AI Control Center
+Natural Language Modeling
+Multimodal Architecture
+Program Engine
+Plan Engine
+Documentation
+Facade Engine
+L0-L8 Detail Engine
+High-Detail Modeling
+Selection-Aware AI
+Design Protection
+Project Design DNA
+Architectural Memory
+Precedent Engine
+Architecture Radar
+Site Intelligence
+Design Critic
+Design Options
+Grasshopper Copilot
+Parametric Control
+3D Printed Architecture
+Learning Engine
+Skill Registry
+Trajectory Learning
+Model Quality Evaluation
+```
+
+At this stage the platform had broad architectural capabilities, but the critical remaining limitation was actual Rhino Desktop execution.
+
+---
+
+# 7. V0.9.2 — SELF-IMPROVING ARCHITECTURAL AGENT
+
+V0.9.2 converted the feature set into a more integrated architectural-agent architecture.
+
+The core agent implemented 13 lifecycle methods:
+
+```text
+understand
+reason
+plan
+decompose
+select_tools
+execute
+observe
+validate
+critique
+correct
+learn
+remember
+evaluate
+```
+
+The platform also implemented 17 specialist agents and an authoritative 19-state closed-loop state machine.
+
+The state machine became:
+
+```text
+IDLE
+UNDERSTAND
+CONTEXT
+PLAN
+PREFLIGHT
+SNAPSHOT
+EXECUTE
+OBSERVE
+VALIDATE
+CRITIQUE
+CORRECT
+REVALIDATE
+COMMIT
+LEARN
+MEMORIZE
+COMPLETE
+FAILED
+RECOVERY
+ROLLBACK
+```
+
+---
+
+# 8. V0.9.2 SPECIALIST AGENTS
+
+The implemented specialist architecture contains:
+
+```text
+VisionAgent
+ArchitectureReasoningAgent
+ProgramAgent
+SiteAgent
+PlanningAgent
+ModelingAgent
+DetailAgent
+FacadeAgent
+ParametricAgent
+GrasshopperAgent
+CriticAgent
+ValidationAgent
+MemoryAgent
+LearningAgent
+PrecedentAgent
+FabricationAgent
+RhinoExecutionAgent
+```
+
+These are coordinated by:
+
+```text
+ArchitecturalAgentOrchestrator
+```
+
+---
+
+# 9. V0.9.2 ARCHITECTURAL QUALITY SYSTEM
+
+The platform implemented a 13-dimensional architectural quality vector:
+
+```text
+Geometry Quality
+Program Quality
+Spatial Quality
+Circulation
+Environmental Response
+Facade Quality
+Structural Plausibility
+Detail Completeness
+Material Coherence
+Fabrication Feasibility
+Constraint Satisfaction
+Code Compliance
+User Intent Alignment
+```
+
+The system intentionally avoids reducing architectural quality to a single subjective score.
+
+---
+
+# 10. V0.9.2 CONTROLLED LEARNING
+
+The learning system uses:
+
+```text
+EXPERIENCE
+ ↓
+EXTRACT
+ ↓
+GENERALIZE
+ ↓
+CANDIDATE
+ ↓
+BENCHMARK
+ ↓
+REGRESSION
+ ↓
+APPROVE
+ ↓
+PROMOTE
+```
+
+Skill states include:
+
+```text
+DRAFT
+CANDIDATE
+EVALUATING
+VERIFIED
+PROMOTED
+DEPRECATED
+REJECTED
+```
+
+The implementation includes failure classification and recovery learning.
+
+This is **controlled self-improvement**, rather than unrestricted modification of the production system.
+
+---
+
+# 11. V0.9.2 EXPERIENCE & TRAJECTORY SYSTEM
+
+The platform records:
+
+```text
+ExperienceRecord
+Tool Sequence
+Failure Recovery
+Trajectory
+Replay
+Validation
+User Feedback
+```
+
+The deterministic trajectory replay system was verified as part of the V0.9.2 architecture.
+
+---
+
+# 12. V0.9.2 GEOMETRY / BIM SYSTEM
+
+The geometry engine contains:
+
+```text
+Point3D
+Vector3D
+BoundingBox
+Polygon
+BrepSolid
+Face
+```
+
+plus architectural BIM elements:
+
+```text
+Site
+MassingBlock
+Wall
+Slab
+Column
+Opening
+Stair
+```
+
+The B-Rep system includes manifoldness verification and OBJ export.
+
+---
+
+# 13. V0.9.2 DETAIL SYSTEM
+
+The platform supports progressive modeling resolution:
+
+```text
+L0 MASSING
+L1 SCHEMATIC
+L2 SPATIAL
+L3 ARCHITECTURAL
+L4 FACADE
+L5 COMPONENT
+L6 ASSEMBLY
+L7 CONSTRUCTION
+L8 FABRICATION DETAIL
+```
+
+This allows the agent to increase model complexity progressively rather than generating excessive geometry immediately.
+
+---
+
+# 14. V0.9.2 PARAMETRIC SYSTEM
+
+The platform includes:
+
+```text
+Curtain Wall Generation
+WWR
+Vision Glass
+Spandrels
+Sunshade Louvers
+Grasshopper DAG Generation
+RhinoCommon Python Generation
+3D Concrete Printing
+Fabrication Feasibility
+```
+
+The facade and Grasshopper systems are implemented inside the parametric layer.
+
+---
+
+# 15. V0.9.2 ARCHITECTURAL REASONING
+
+The reasoning system contains:
+
+```text
+Program Engine
+Spatial Layout Solver
+Environmental Intelligence
+Precedent Radar
+Architecture Radar
+```
+
+It handles:
+
+```text
+Net Area
+Gross Area
+Circulation
+Adjacency
+Spatial Allocation
+Solar Orientation
+Daylight
+Facade Shading
+Precedent Patterns
+```
+
+---
+
+# 16. V0.9.2 CRITIC & CODE SYSTEM
+
+The critic layer contains:
+
+```text
+Building Codes
+Design Critic
+Quality Vector
+```
+
+The system supports checks involving:
+
+```text
+ceiling height
+egress corridor
+door clearance
+stair ergonomics
+column spacing
+envelope clashes
+```
+
+The supplied V0.9.2 report specifically identifies IBC/NBC-related rule implementation and Blondel stair-rule handling.
+
+These checks should be treated as software rules and evidence-based checks, not as substitutes for professional approval or jurisdictional authority.
+
+---
+
+# 17. V0.9.2 MCP SYSTEM
+
+The MCP gateway implements JSON-RPC 2.0 and exposes architectural modeling, reasoning, parametric, and critique tools.
+
+The supplied audit recorded:
+
+```text
+24 tools
+risk-level annotations
+destructive-action guards
+```
+
+with risk categories:
+
+```text
+READ_ONLY
+LOW_RISK_MUTATION
+HIGH_RISK_MUTATION
+DESTRUCTIVE
+EXTERNAL_SIDE_EFFECT
+```
+
+---
+
+# 18. V0.9.2 RHINO PLUGIN
+
+The Rhino plugin was compiled for Rhino 8 with:
+
+```text
+AiRhinoPlugin
+AiRhinoCommand
+RhinoMcpServer
+RhinoDocumentState
+RhinoGeometryBuilder
+```
+
+## The supplied audit records a successful Rhino plugin build with zero compilation errors and four warnings.
+
+# 19. V0.9.2 TEST STATUS
+
+The V0.9.2 test suite expanded to 18 test suites covering:
+
+```text
+geometry
+BRep
+BIM
+transactions
+program
+spatial layout
+environmental reasoning
+facade
+Grasshopper
+building codes
+agent lifecycle
+specialist orchestration
+experience memory
+trajectory replay
+learning
+failure recovery
+quality evaluation
+precedent/radar
+concrete printing
+state machine
+MCP risk handling
+```
+
+The supplied audit recorded:
+
+```text
+18 tests
+18 passed
+0 failures
+0 errors
+```
+
+---
+
+# 20. V0.9.2 SIMULATOR STATUS
+
+The V0.9.2 simulator benchmark recorded:
+
+```text
+1000 PASS
+40 RECOVERED
+0 FAILED
+```
+
+with:
+
+```text
+100.0% trajectory replay parity
+```
+
+according to the supplied audit.
+
+---
+
+# 21. V0.9.3 — LIVE RHINO TRANSITION
+
+V0.9.3 changed the project's most important execution boundary.
+
+Architecture:
+
+```text
+Python MCP
+      ↕
+RhinoLiveBridge
+      ↕
+HTTP / JSON-RPC 2.0
+      ↕
+RhinoMcpServer
+      ↓
+RhinoApp UI Thread
+      ↓
+RhinoCommon
+      ↓
+RhinoDoc.ActiveDoc
+```
+
+This created the first live execution path from the AI agent into the Rhino 8 Desktop document.
+
+---
+
+# 22. THREE EXECUTION MODES
+
+V0.9.3 established:
+
+```text
+SIMULATOR
+LIVE_RHINO
+AUTO
+```
+
+Meaning:
+
+### SIMULATOR
+
+Local deterministic execution.
+
+### LIVE_RHINO
+
+Actual Rhino Desktop only.
+
+### AUTO
+
+Select live Rhino when available and use simulator when unavailable.
+
+An explicit execution environment is recorded for every task.
+
+---
+
+# 23. LIVE RHINO TOOLING
+
+The reported Rhino plugin supports tools including:
+
+```text
+create_massing
+create_wall
+create_slab
+create_column_grid
+create_stair
+create_curtain_wall
+create_rectangle
+extrude_curve
+get_scene_summary
+rollback
+clear_scene
+```
+
+These are routed through the live JSON-RPC bridge.
+
+---
+
+# 24. LIVE RHINO BENCHMARK RESULT
+
+The reported V0.9.3 live benchmark suite contains:
+
+```text
+LIVE_001 → LIVE_016
+```
+
+covering:
+
+```text
+connection
+document state
+point
+line
+wall
+slab
+column grid
+stair
+facade
+selection
+rollback
+viewport
+visual validation
+external change
+connection loss
+live trajectory
+```
+
+The supplied result reports:
+
+```text
+16 / 16 PASS
+100.0%
+```
+
+---
+
+# 25. LIVE EXECUTION EVIDENCE
+
+The reported V0.9.3 state includes:
+
+```text
+RHINO_LIVE = TRUE
+Real Rhino Executions = 38
+Real Rhino Verified Skills = 4
+Live Benchmarks = 16 PASS / 0 FAILED
+```
+
+The active Rhino instance was reported as Rhino 8 Desktop with the Rhino MCP gateway available on port `8765`.
+
+These figures are based on the project's supplied V0.9.3 implementation report.
+
+---
+
+# 26. V0.9.3 VISUAL CLOSED LOOP
+
+V0.9.3 introduced viewport telemetry and visual validation.
+
+The pipeline became:
+
+```text
+CREATE
+ ↓
+OBSERVE RHINO
+ ↓
+CAPTURE VIEWPORT
+ ↓
+VISUAL VALIDATION
+ ↓
+GEOMETRIC VALIDATION
+ ↓
+SEMANTIC VALIDATION
+```
+
+Viewport captures are stored with image hashes and camera information.
+
+---
+
+# 27. V0.9.3 DOCUMENT DIVERGENCE
+
+The system can compare expected Rhino state with current Rhino state.
+
+This allows detection of:
+
+```text
+AI changes
++
+user changes
++
+unexpected document state
+```
+
+and enables:
+
+```text
+STOP
+ ↓
+OBSERVE
+ ↓
+REPLAN
+```
+
+instead of blindly overwriting user modifications.
+
+---
+
+# 28. V0.9.3 TRANSACTION / ROLLBACK
+
+The Rhino integration introduced scoped live transaction handling and rollback behavior.
+
+The system records created GUIDs and uses Rhino-side undo mechanisms within the controlled workflow.
+
+The important design goal is:
+
+```text
+AI mutation
+=
+known transaction
+```
+
+rather than uncontrolled modification of the document.
+
+---
+
+# 29. V0.9.3.1 — UNIT SYSTEM HOTFIX
+
+A significant production bug was discovered after the first live integration:
+
+```text
+AI did not consistently understand the active Rhino document unit system.
+```
+
+This created dangerous ambiguity such as:
+
+```text
+5000 mm
+```
+
+being treated or reported incorrectly in meter-based reasoning.
+
+---
+
+# 30. UNIT SYSTEM SOLUTION
+
+V0.9.3.1 established:
+
+```text
+RhinoDoc.ActiveDoc.ModelUnitSystem
+```
+
+as the authoritative Rhino model-unit source.
+
+The unit architecture introduced:
+
+```text
+Dimension
+UnitConverter
+DimensionParser
+DimensionFormatter
+UnitContext
+RhinoUnitAdapter
+```
+
+The conversion pipeline became:
+
+```text
+USER INPUT
+ ↓
+NORMALIZE
+ ↓
+READ RHINO MODEL UNITS
+ ↓
+CONVERT
+ ↓
+RHINO EXECUTION
+ ↓
+ACTUAL MEASUREMENT
+ ↓
+CONVERT OUTPUT
+ ↓
+USER
+```
+
+---
+
+# 31. UNIT EXAMPLE
+
+For a Rhino document using millimeters:
+
+```text
+USER:
+5 m × 0.2 m × 3 m
+```
+
+becomes:
+
+```text
+RHINO:
+5000 mm × 200 mm × 3000 mm
+```
+
+and actual Rhino measurements are then independently read back.
+
+This prevents the system from confusing:
+
+```text
+MODEL UNITS
+INPUT UNITS
+OUTPUT UNITS
+DISPLAY UNITS
+```
+
+---
+
+# 32. UNIT VERIFICATION
+
+The V0.9.3.1 report records:
+
+```text
+26 / 26 live unit benchmarks passed
+33 / 33 automated tests passed
+```
+
+including:
+
+```text
+mm
+m
+cm
+ft
+cross-unit wall creation
+output-unit conversion
+unit validation
+unit-change behavior
+unit mismatch detection
+```
+
+The key verified invariant is:
+
+```text
+5 m
+=
+5000 mm
+```
+
+without treating the two numerical representations as different physical dimensions.
+
+---
+
+# 33. CURRENT PROJECT ARCHITECTURE
+
+The current platform can be understood as:
+
+```text
+┌─────────────────────────────────────────────┐
+│                  USER / UI                  │
+└──────────────────────┬──────────────────────┘
+                       ↓
+┌─────────────────────────────────────────────┐
+│          ARCHITECTURAL AGENT                │
+│  Understand / Reason / Plan / Critique      │
+└──────────────────────┬──────────────────────┘
+                       ↓
+┌─────────────────────────────────────────────┐
+│       SPECIALIST ORCHESTRATOR               │
+│ Vision / Program / Facade / Detail / etc.  │
+└──────────────────────┬──────────────────────┘
+                       ↓
+┌─────────────────────────────────────────────┐
+│       SEMANTIC ARCHITECTURAL MODEL          │
+└──────────────────────┬──────────────────────┘
+                       ↓
+┌─────────────────────────────────────────────┐
+│      MODELING / PARAMETRIC / CRITIC         │
+└──────────────────────┬──────────────────────┘
+                       ↓
+┌─────────────────────────────────────────────┐
+│                  MCP                        │
+└──────────────────────┬──────────────────────┘
+                       ↓
+┌─────────────────────────────────────────────┐
+│             RhinoLiveBridge                 │
+└──────────────────────┬──────────────────────┘
+                       ↓
+┌─────────────────────────────────────────────┐
+│             RHINO 8 PLUGIN                  │
+│ RhinoMcpServer / RhinoCommon / UI Thread   │
+└──────────────────────┬──────────────────────┘
+                       ↓
+┌─────────────────────────────────────────────┐
+│             LIVE RHINODOC                   │
+└─────────────────────────────────────────────┘
+
+Cross-cutting:
+Units
+Memory
+Learning
+Design DNA
+Validation
+Observability
+Security
+Persistence
+Trajectory
+```
+
+---
+
+# 34. CORE ARCHITECTURAL PRINCIPLE
+
+The project is deliberately separating:
+
+```text
+VISION
+≠
+REASONING
+≠
+PLANNING
+≠
+EXECUTION
+≠
+OBSERVATION
+≠
+VALIDATION
+≠
+CRITIQUE
+≠
+LEARNING
+```
+
+Likewise:
+
+```text
+AI
+≠
+RHINO
+
+MCP
+≠
+ARCHITECTURAL REASONING
+
+MEMORY
+≠
+LEARNING
+
+UNIT CONVERSION
+≠
+GEOMETRY CREATION
+```
+
+This separation is necessary for reliability and future scaling.
+
+---
+
+# 35. CURRENT ARCHITECTURAL DATA MODEL
+
+The project combines:
+
+```text
+PROJECT
+ ↓
+SITE
+ ↓
+BUILDING
+ ↓
+FLOOR
+ ↓
+SPACE
+ ↓
+WALL
+ ↓
+OPENING
+ ↓
+WINDOW / DOOR
+ ↓
+FACADE
+ ↓
+COMPONENT
+ ↓
+ASSEMBLY
+ ↓
+DETAIL
+```
+
+and relationships such as:
+
+```text
+BUILDING contains FLOOR
+FLOOR contains ROOM
+ROOM bounded_by WALL
+WALL hosts OPENING
+FLOOR supports WALL
+BUILDING contains CORE
+SITE contains BUILDING
+PATH connects SPACE
+```
+
+---
+
+# 36. PROJECT DESIGN DNA
+
+Design DNA is intended to maintain project-specific consistency across AI interactions.
+
+It includes:
+
+```text
+grid
+proportion
+mass language
+facade language
+material palette
+color
+opening language
+landscape language
+structural language
+detail language
+sustainability targets
+user-approved preferences
+```
+
+It is project-scoped rather than global.
+
+---
+
+# 37. MEMORY & LEARNING ARCHITECTURE
+
+The project now distinguishes:
+
+```text
+MEMORY
+```
+
+from:
+
+```text
+LEARNING
+```
+
+Memory stores:
+
+```text
+experience
+trajectory
+decision
+feedback
+project state
+```
+
+Learning determines:
+
+```text
+what can be generalized
+what becomes a candidate skill
+what passes regression
+what may be promoted
+```
+
+This is an important safeguard against uncontrolled self-modification.
+
+---
+
+# 38. FABRICATION INTELLIGENCE
+
+The platform contains a dedicated 3D concrete printing subsystem covering:
+
+```text
+layer height
+bead width
+overhang
+toolpath
+print continuity
+printing direction
+wall thickness
+fabrication feasibility
+```
+
+The reported V0.9.2 implementation distinguishes:
+
+```text
+CONCEPTUAL_PRINTING
+ENGINEERING_READY_PRINTING
+FABRICATION_VERIFIED_PRINTING
+```
+
+---
+
+# 39. V0.9.4 — NEXT DEVELOPMENT STAGE
+
+The next major step is no longer primarily about connecting Rhino.
+
+It is about giving the agent stronger **architectural vision**.
+
+V0.9.4 introduces:
+
+```text
+IMAGE
+REFERENCE
+VIDEO FRAME
+RHINO VIEWPORT
+EXISTING MODEL
+TEXT
+       ↓
+ARCHITECTURAL VISION
+       ↓
+SEMANTIC UNDERSTANDING
+       ↓
+DESIGN TRANSLATION
+       ↓
+CONTROLLED RHINO EDIT
+       ↓
+VISUAL VALIDATION
+```
+
+---
+
+# 40. V0.9.4 MULTIMODAL OBJECTIVE
+
+The agent should understand:
+
+```text
+what is in the image
+what is in the Rhino model
+what is selected
+what is protected
+what can change
+what architectural characteristics are present
+what those characteristics mean
+```
+
+before deciding what geometry to create.
+
+---
+
+# 41. ARCHITECTURAL VISION
+
+The planned vision engine is:
+
+```text
+IMAGE
+ ↓
+SCENE UNDERSTANDING
+ ↓
+ARCHITECTURAL OBJECT DETECTION
+ ↓
+RELATIONSHIP DETECTION
+ ↓
+SPATIAL INTERPRETATION
+ ↓
+DESIGN-LANGUAGE EXTRACTION
+ ↓
+SEMANTIC REPRESENTATION
+```
+
+---
+
+# 42. OBSERVED / INFERRED / RECONSTRUCTED
+
+The multimodal system must explicitly classify evidence as:
+
+```text
+OBSERVED
+INFERRED
+RECONSTRUCTED
+GENERATED
+UNKNOWN
+```
+
+For example:
+
+```text
+Visible window:
+OBSERVED
+
+Wall thickness:
+UNKNOWN
+
+Likely floor height:
+INFERRED
+```
+
+This is essential to prevent visual AI from inventing unsupported architectural measurements.
+
+---
+
+# 43. REFERENCE-TO-RHINO CONCEPT
+
+The intended V0.9.4 workflow is:
+
+```text
+REFERENCE IMAGE
+ ↓
+VISION
+ ↓
+ARCHITECTURAL FEATURE GRAPH
+ ↓
+USER INTENT
+ ↓
+PROJECT CONSTRAINTS
+ ↓
+DESIGN TRANSLATION
+ ↓
+TASK PLAN
+ ↓
+LIVE RHINO
+ ↓
+VIEWPORT
+ ↓
+COMPARISON
+ ↓
+VALIDATION
+```
+
+The system should translate:
+
+```text
+architectural character
+```
+
+rather than blindly copying:
+
+```text
+reference geometry
+```
+
+---
+
+# 44. VISUAL MODEL INSPECTOR
+
+A future/current V0.9.4 capability is:
+
+```text
+ModelInspectorAgent
+```
+
+allowing questions such as:
+
+```text
+What am I looking at?
+Which wall is this?
+What changed?
+Which objects were created by AI?
+Show the entrance.
+What is different from the previous version?
+```
+
+Responses must come from actual Rhino state wherever applicable.
+
+---
+
+# 45. SELECTION-AWARE INTELLIGENCE
+
+A selected Rhino object should provide the AI with:
+
+```text
+GUID
+semantic ID
+geometry
+parent
+neighbors
+relationships
+design role
+project Design DNA
+viewport context
+```
+
+This allows commands such as:
+
+```text
+"Make these fins deeper by 100 mm."
+```
+
+to affect the intended selection rather than unrelated geometry.
+
+---
+
+# 46. DESIGN PROTECTION
+
+V0.9.4 must preserve explicit scope.
+
+For:
+
+```text
+"Redesign the facade."
+```
+
+the expected interpretation may be:
+
+```text
+PROTECTED:
+massing
+
+EDITABLE:
+facade
+openings
+screens
+louvers
+materials
+```
+
+The scope must be explicit.
+
+---
+
+# 47. VISUAL + GEOMETRIC VALIDATION
+
+The platform is moving toward:
+
+```text
+ACTUAL RHINO GEOMETRY
++
+SEMANTIC RHINO STATE
++
+VIEWPORT
+```
+
+as three complementary evidence channels.
+
+The hierarchy remains:
+
+```text
+actual geometry
+    ↑
+semantic state
+    ↑
+viewport
+    ↑
+vision inference
+    ↑
+reference interpretation
+```
+
+---
+
+# 48. PRODUCTION STRENGTHS
+
+Current major strengths are:
+
+```text
+Live Rhino connectivity
+Controlled MCP execution
+Unit-safe geometry
+Semantic architectural modeling
+Closed-loop agent architecture
+Transaction and rollback infrastructure
+Architectural reasoning
+Program generation
+Facade generation
+Detail engine
+Design critic
+Project Design DNA
+Experience memory
+Controlled learning
+Trajectory replay
+Concrete printing intelligence
+Simulator + live environment separation
+```
+
+---
+
+# 49. CURRENT RISKS / AREAS REQUIRING CONTINUED HARDENING
+
+Important ongoing engineering concerns are:
+
+```text
+multimodal inference uncertainty
+reference-to-geometry ambiguity
+visual measurement uncertainty
+complex live Rhino transaction scope
+large-model performance
+remote workstation security
+architectural knowledge provenance
+code/regulation versioning
+live Rhino regression coverage
+high-detail geometry performance
+agent autonomy boundaries
+```
+
+The system should remain evidence-driven in all of these areas.
+
+---
+
+# 50. WHAT THE SYSTEM IS NOT YET
+
+The platform should not currently be described simply as:
+
+```text
+a fully autonomous architect
+```
+
+or:
+
+```text
+a replacement for professional architectural / structural / engineering judgment
+```
+
+The implemented system is an AI architectural design and CAD automation platform with increasingly strong live Rhino execution and validation capabilities.
+
+Its reliability claims should remain tied to the actual benchmark and evidence system.
+
+---
+
+# 51. CURRENT MATURITY
+
+The project has crossed several major thresholds:
+
+```text
+THRESHOLD 1
+Architectural CAD representation
+        ✓
+
+THRESHOLD 2
+Controlled AI tool execution
+        ✓
+
+THRESHOLD 3
+Closed-loop architectural agent
+        ✓
+
+THRESHOLD 4
+Learning / memory architecture
+        ✓
+
+THRESHOLD 5
+Live Rhino 8 execution
+        ✓
+
+THRESHOLD 6
+Live unit-safe geometry
+        ✓
+
+THRESHOLD 7
+Multimodal architectural vision
+        → NEXT
+```
+
+---
+
+# 52. CURRENT VERIFIED POSITION
+
+Based on the supplied implementation reports:
+
+```text
+V0.9.2
+ARCHITECTURAL AGENT:
+IMPLEMENTED / VERIFIED
+
+V0.9.3
+LIVE RHINO:
+VERIFIED
+
+V0.9.3.1
+UNIT SYSTEM:
+VERIFIED
+
+V0.9.4
+MULTIMODAL ARCHITECTURAL VISION:
+NEXT DEVELOPMENT STAGE
+```
+
+---
+
+# 53. LONG-TERM PRODUCT ROADMAP
+
+The overall platform can evolve toward:
+
+```text
+V0.9.x
+Execution + Architectural Intelligence
+
+V1.0
+Multimodal Architectural Design Partner
+
+V1.x
+Advanced Architectural Reasoning
++
+High Detail
++
+Documentation
++
+Site Intelligence
+
+V2.x
+Multi-project Learning
++
+Large Architectural Knowledge Graph
++
+Advanced Multimodal Design
+
+V3.x
+Distributed Architectural Agent
++
+Workstation Network
++
+Fabrication Intelligence
++
+Advanced Autonomous Design Workflows
+```
+
+These are development directions, not claims of completed capability.
+
+---
+
+# 54. END-TO-END TARGET SYSTEM
+
+The long-term architecture is:
+
+```text
+                    USER
+                      ↓
+                AI CONTROL CENTER
+                      ↓
+              MULTIMODAL INPUT
+             ↙       ↓       ↘
+          TEXT      IMAGE     MODEL
+             \        |        /
+              ARCHITECTURAL VISION
+                      ↓
+             SEMANTIC ARCHITECTURE
+                      ↓
+                PROJECT MEMORY
+                      ↓
+                 DESIGN DNA
+                      ↓
+             ARCHITECTURAL REASONING
+                      ↓
+                   PLANNER
+                      ↓
+             SPECIALIST AGENTS
+                      ↓
+                TASK GRAPH
+                      ↓
+             CONTROLLED MCP TOOLS
+                      ↓
+                RHINO BRIDGE
+                      ↓
+                  RHINO 8
+                      ↓
+                 RHINOCOMMON
+                      ↓
+                 LIVE MODEL
+                 ↙        ↘
+          GEOMETRY       VIEWPORT
+                 \        /
+                  OBSERVATION
+                      ↓
+                   CRITIC
+                      ↓
+                 VALIDATION
+                      ↓
+                  CORRECTION
+                      ↓
+                 REVALIDATION
+                      ↓
+                   COMMIT
+                      ↓
+                  TRAJECTORY
+                      ↓
+                EXPERIENCE
+                      ↓
+             CONTROLLED LEARNING
+```
+
+---
+
+# 55. PROJECT DEFINING PRINCIPLE
+
+The project can be summarized in one sentence:
+
+> **AI RHINO ARCHITECT is building an evidence-driven architectural AI system that can understand architectural intent, reason about design, create and modify semantic CAD geometry, execute those operations safely in Rhino 8, observe the real result, validate it, learn from verified experience, and progressively gain multimodal architectural vision.**
+
+---
+
+# 56. CURRENT NEXT PRIORITIES
+
+The most important next engineering priorities are:
+
+```text
+1. Enforce explicit module ownership and interfaces.
+
+2. Implement V0.9.4 architectural vision.
+
+3. Connect reference images to semantic architectural features.
+
+4. Understand existing Rhino models and selections.
+
+5. Implement reference-to-project design translation.
+
+6. Implement protected-scope visual editing.
+
+7. Add viewport/geometry visual comparison.
+
+8. Extend multimodal trajectories and learning.
+
+9. Preserve all live Rhino and unit-system regressions.
+
+10. Expand live architectural workflows from primitive geometry
+    toward high-detail architectural design.
+```
+
+---
+
+# 57. FINAL PROJECT STATUS
+
+```text
+==================================================
+AI RHINO ARCHITECT — PROJECT STATUS
+==================================================
+
+ARCHITECTURAL CAD ENGINE:
+VERIFIED
+
+BIM / SEMANTIC ARCHITECTURE:
+VERIFIED
+
+DETAIL ENGINE:
+VERIFIED
+
+PROGRAM / SPATIAL REASONING:
+VERIFIED
+
+FACADE / PARAMETRIC ENGINE:
+VERIFIED
+
+GRASSHOPPER:
+VERIFIED
+
+DESIGN CRITIC:
+VERIFIED
+
+MCP:
+VERIFIED
+
+ARCHITECTURAL AGENT:
+VERIFIED
+
+CLOSED-LOOP EXECUTION:
+VERIFIED
+
+MEMORY:
+VERIFIED
+
+TRAJECTORY SYSTEM:
+VERIFIED
+
+CONTROLLED LEARNING:
+VERIFIED
+
+PROJECT DESIGN DNA:
+VERIFIED
+
+3D CONCRETE PRINTING:
+VERIFIED
+
+LIVE RHINO 8:
+VERIFIED
+
+LIVE MCP ↔ RHINO:
+VERIFIED
+
+UNIT SYSTEM:
+VERIFIED
+
+LIVE UNIT CONVERSION:
+VERIFIED
+
+LIVE VISUAL TELEMETRY:
+VERIFIED
+
+MULTIMODAL ARCHITECTURAL VISION:
+NEXT MAJOR STAGE
+
+REFERENCE-TO-RHINO:
+NEXT MAJOR STAGE
+
+VISUAL DESIGN EDITING:
+NEXT MAJOR STAGE
+
+PRODUCTION ARCHITECTURAL AI:
+IN DEVELOPMENT
+==================================================
+```
+
+# 58. FINAL OUTLOOK
+
+The project has progressed from a concept for AI-assisted Rhino automation into a functioning architectural software platform with:
+
+```text
+ARCHITECTURAL KNOWLEDGE
++
+SEMANTIC MODELING
++
+AI AGENT ORCHESTRATION
++
+CONTROLLED EXECUTION
++
+LIVE RHINO
++
+UNIT SAFETY
++
+VALIDATION
++
+MEMORY
++
+LEARNING
+```
+
+The next major transformation is to give this execution foundation a genuine **architectural visual understanding layer**, allowing the system to move from:
+
+```text
+"Tell me what geometry to create"
+```
+
+toward:
+
+```text
+"Show me what you are designing,
+understand what I am showing you,
+understand the Rhino model,
+and make the requested architectural change
+without damaging what I told you to preserve."
+```
+
+That is the central objective of V0.9.4 and the next major step toward the full AI RHINO ARCHITECT product.

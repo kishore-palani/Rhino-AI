@@ -1,0 +1,41 @@
+{
+  "$schema": "https://app.kilo.ai/config.json",
+  "permission": {
+    "bash": "allow",
+    "edit": "allow",
+    "write": "allow",
+    "read": "allow",
+    "glob": "allow",
+    "grep": "allow",
+    "webfetch": "allow",
+    "websearch": "allow",
+    "rhino_*": "ask"
+  },
+  "mcp": {
+    "agentmemory": {
+      "type": "local",
+      "command": ["cmd", "/c", "npx", "-y", "@agentmemory/mcp"],
+      "environment": {
+        "AGENTMEMORY_URL": "http://localhost:3111",
+        "AGENTMEMORY_TOOLS": "core"
+      },
+      "enabled": true,
+      "timeout": 10000
+    },
+    "rhino": {
+      "type": "local",
+      "command": ["C:/Users/Administrator/AppData/Roaming/McNeel/Rhinoceros/packages/8.0/Rhino-MCP-Platform/0.1.5/router/win-x64/rhino-mcp-router.exe"],
+      "enabled": true,
+      "timeout": 30000
+    }
+  },
+  "skills": {
+    "paths": [".kilo/skills"]
+  },
+  "default_agent": "orchestrator",
+  "web_search": true,
+  "reasoning_display": "preview",
+  "terminal_command_display": "collapsed",
+  "code_edit_display": "collapsed",
+  "mcp_tool_display": "collapsed"
+}

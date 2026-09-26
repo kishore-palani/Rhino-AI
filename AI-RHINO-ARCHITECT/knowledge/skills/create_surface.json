@@ -1,0 +1,68 @@
+{
+  "schema_version": "0.1.0",
+  "skill_id": "create_surface",
+  "name": "Create Surface",
+  "description": "Create a NURBS surface by lofting or fitting through a set of boundary curves.",
+  "skill_type": "create",
+  "category": "geometry",
+  "inputs": ["curves", "mode"],
+  "outputs": ["surface_guid", "surface_ref"],
+  "parameters": {
+    "curves": {
+      "type": "list",
+      "required": true,
+      "description": "Ordered list of boundary or cross-section curves used to build the surface.",
+      "geometry_role": "section_curves"
+    },
+    "mode": {
+      "type": "enum",
+      "required": false,
+      "description": "Surface construction strategy.",
+      "default": "loft",
+      "choices": ["loft", "sweep", "fit"]
+    }
+  },
+  "preconditions": [
+    "document_connected",
+    "valid_curve",
+    "sufficient_curves",
+    "scope_allowed"
+  ],
+  "operations": [
+    "resolve_units",
+    "loft",
+    "add_surface_to_document"
+  ],
+  "validation": [
+    "valid_surface",
+    "expected_object_count",
+    "document_state_consistent"
+  ],
+  "failure_modes": [
+    "missing_input",
+    "invalid_parameter",
+    "unit_mismatch",
+    "precondition_failed",
+    "permission_denied",
+    "tool_unavailable",
+    "execution_failed",
+    "invalid_curve",
+    "loft_failed",
+    "invalid_surface",
+    "dimension_mismatch",
+    "rollback_failed"
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "status": "experimental",
+    "author": "AI RHINO ARCHITECT",
+    "risk_level": "low",
+    "side_effects": ["add surface object to Rhino document"],
+    "rhino_tools": ["loft", "sweep1", "create_object"],
+    "grasshopper_tools": [],
+    "tags": ["geometry", "surface", "nurbs", "loft", "sweep"],
+    "references": ["docs/rhino_integration.md", "docs/architecture.md"],
+    "created_at": "2026-09-25T10:22:35Z",
+    "updated_at": "2026-09-25T10:22:35Z"
+  }
+}

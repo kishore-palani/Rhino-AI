@@ -1,0 +1,82 @@
+{
+  "schema_version": "0.1.0",
+  "skill_id": "create_column",
+  "name": "Create Column",
+  "description": "Create a cylindrical column solid between a base point and a top point with the supplied radius.",
+  "skill_type": "create",
+  "category": "architecture",
+  "inputs": ["base", "top", "radius"],
+  "outputs": ["column_brep", "column_guid"],
+  "parameters": {
+    "base": {
+      "type": "point",
+      "required": true,
+      "description": "Center point of the column base.",
+      "geometry_role": "base_center"
+    },
+    "top": {
+      "type": "point",
+      "required": true,
+      "description": "Center point of the column top.",
+      "geometry_role": "top_center"
+    },
+    "radius": {
+      "type": "number",
+      "required": true,
+      "description": "Circular cross-section radius of the column.",
+      "minimum": 0,
+      "units": "model_units"
+    }
+  },
+  "preconditions": [
+    "document_connected",
+    "valid_point",
+    "distinct_endpoints",
+    "positive_radius",
+    "scope_allowed"
+  ],
+  "operations": [
+    "resolve_units",
+    "create_circle",
+    "extrude_curve",
+    "cap_brep",
+    "add_brep_to_document"
+  ],
+  "validation": [
+    "valid_brep",
+    "closed_solid",
+    "manifold",
+    "correct_dimensions",
+    "expected_object_count",
+    "document_state_consistent"
+  ],
+  "failure_modes": [
+    "missing_input",
+    "invalid_parameter",
+    "unit_mismatch",
+    "precondition_failed",
+    "permission_denied",
+    "tool_unavailable",
+    "execution_failed",
+    "invalid_point",
+    "extrusion_failed",
+    "cap_failed",
+    "invalid_brep",
+    "open_solid",
+    "dimension_mismatch",
+    "rollback_failed"
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "status": "experimental",
+    "author": "AI RHINO ARCHITECT",
+    "risk_level": "medium",
+    "side_effects": ["add column Brep to Rhino document"],
+    "rhino_tools": ["create_object", "extrude_curve", "analyze_objects"],
+    "grasshopper_tools": [],
+    "tags": ["architecture", "column", "cylinder", "solid", "extrusion"],
+    "references": ["docs/architecture.md", "docs/rhino_integration.md"],
+    "created_at": "2026-09-25T10:22:35Z",
+    "updated_at": "2026-09-25T10:22:35Z"
+  }
+}

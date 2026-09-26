@@ -1,0 +1,20 @@
+# Workspace-local environments and agent state
+/.venv/
+/.agentmemory-data/
+/.kilo/worktrees/
+/logs/*.log
+/Kilo session-*.md
+
+# Local secrets and environment files
+**/.env
+**/.env.*
+!**/.env.example
+
+# Python caches and test output
+**/__pycache__/
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+**/.coverage*
+**/coverage.xml
+**/htmlcov/

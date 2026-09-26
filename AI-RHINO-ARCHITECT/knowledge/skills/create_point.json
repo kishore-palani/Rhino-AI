@@ -1,0 +1,59 @@
+{
+  "schema_version": "0.1.0",
+  "skill_id": "create_point",
+  "name": "Create Point",
+  "description": "Create a 3D point object at the supplied coordinates in the active Rhino document.",
+  "skill_type": "create",
+  "category": "geometry",
+  "inputs": ["point"],
+  "outputs": ["point_guid", "point_ref"],
+  "parameters": {
+    "point": {
+      "type": "point",
+      "required": true,
+      "description": "XYZ coordinates of the point to create.",
+      "geometry_role": "vertex"
+    }
+  },
+  "preconditions": [
+    "document_connected",
+    "valid_point",
+    "scope_allowed"
+  ],
+  "operations": [
+    "resolve_units",
+    "create_point",
+    "add_point_to_document"
+  ],
+  "validation": [
+    "valid_point",
+    "expected_object_count",
+    "document_state_consistent"
+  ],
+  "failure_modes": [
+    "missing_input",
+    "invalid_parameter",
+    "unit_mismatch",
+    "precondition_failed",
+    "permission_denied",
+    "tool_unavailable",
+    "execution_failed",
+    "invalid_point",
+    "invalid_brep",
+    "dimension_mismatch",
+    "rollback_failed"
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "status": "experimental",
+    "author": "AI RHINO ARCHITECT",
+    "risk_level": "low",
+    "side_effects": ["add point object to Rhino document"],
+    "rhino_tools": ["create_object", "get_object_info"],
+    "grasshopper_tools": [],
+    "tags": ["geometry", "point", "vertex", "primitive"],
+    "references": ["docs/rhino_integration.md", "docs/architecture.md"],
+    "created_at": "2026-09-25T10:22:35Z",
+    "updated_at": "2026-09-25T10:22:35Z"
+  }
+}

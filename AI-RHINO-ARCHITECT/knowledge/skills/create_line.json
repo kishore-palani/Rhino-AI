@@ -1,0 +1,67 @@
+{
+  "schema_version": "0.1.0",
+  "skill_id": "create_line",
+  "name": "Create Line",
+  "description": "Create a straight line curve between two endpoints in the active Rhino document.",
+  "skill_type": "create",
+  "category": "geometry",
+  "inputs": ["start", "end"],
+  "outputs": ["line_guid", "line_ref"],
+  "parameters": {
+    "start": {
+      "type": "point",
+      "required": true,
+      "description": "Start point of the line.",
+      "geometry_role": "endpoint"
+    },
+    "end": {
+      "type": "point",
+      "required": true,
+      "description": "End point of the line.",
+      "geometry_role": "endpoint"
+    }
+  },
+  "preconditions": [
+    "document_connected",
+    "valid_point",
+    "distinct_endpoints",
+    "scope_allowed"
+  ],
+  "operations": [
+    "resolve_units",
+    "create_line",
+    "add_curve_to_document"
+  ],
+  "validation": [
+    "valid_curve",
+    "positive_length",
+    "expected_object_count",
+    "document_state_consistent"
+  ],
+  "failure_modes": [
+    "missing_input",
+    "invalid_parameter",
+    "unit_mismatch",
+    "precondition_failed",
+    "permission_denied",
+    "tool_unavailable",
+    "execution_failed",
+    "invalid_curve",
+    "zero_length",
+    "dimension_mismatch",
+    "rollback_failed"
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "status": "experimental",
+    "author": "AI RHINO ARCHITECT",
+    "risk_level": "low",
+    "side_effects": ["add line curve to Rhino document"],
+    "rhino_tools": ["create_object", "analyze_objects"],
+    "grasshopper_tools": [],
+    "tags": ["geometry", "line", "curve", "primitive"],
+    "references": ["docs/rhino_integration.md", "docs/architecture.md"],
+    "created_at": "2026-09-25T10:22:35Z",
+    "updated_at": "2026-09-25T10:22:35Z"
+  }
+}

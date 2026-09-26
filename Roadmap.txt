@@ -1,0 +1,2228 @@
+# AI RHINO ARCHITECT
+
+## AI-Powered Architectural Design & Computational Modeling Agent for Rhino + Grasshopper
+
+**Target Development Environment:** VS Code
+**AI Coding Agent:** Kilo AI
+**Primary CAD Platform:** Rhino 3D
+**Parametric Platform:** Grasshopper
+**Initial Goal:** Build a working V0.1 AI agent capable of converting natural-language instructions into validated Rhino geometry, accepting user feedback, correcting the design, and storing the resulting experience.
+
+---
+
+# 1. PROJECT VISION
+
+Build an AI-powered architectural design agent that works inside or alongside Rhino and Grasshopper.
+
+The system should eventually understand:
+
+* Natural language
+* Architectural design intent
+* Spatial planning
+* Building components
+* Dimensions
+* Construction methods
+* Building regulations
+* Computational design
+* Rhino modeling
+* Grasshopper workflows
+* Images
+* Sketches
+* Videos
+* Architectural precedents
+* Fabrication requirements
+* 3D concrete printing
+* User feedback
+* Modeling failures
+* New architectural trends
+
+The long-term system should be capable of:
+
+> **Understanding an architectural problem → reasoning about the design → generating a modeling strategy → executing it in Rhino → validating the result → receiving feedback → modifying the design → learning from the result.**
+
+This is NOT simply a text-to-3D generator.
+
+It is intended to become an:
+
+> **AI Architectural Computational Design Agent.**
+
+---
+
+# 2. CORE DESIGN PHILOSOPHY
+
+The system should not be designed around the assumption that architecture is a collection of predefined shapes.
+
+Instead, architecture should be represented as relationships:
+
+```text
+USER INTENT
+      ↓
+FUNCTION
+      ↓
+SPATIAL RELATIONSHIPS
+      ↓
+DESIGN STRATEGY
+      ↓
+PARAMETERS
+      ↓
+GEOMETRY
+      ↓
+CONSTRUCTION
+      ↓
+FABRICATION
+```
+
+The AI must be able to explore new possibilities.
+
+Do not restrict it to copying existing architectural styles.
+
+Do not hard-code one architectural methodology.
+
+Do not train it only on final images.
+
+The system should learn from:
+
+* Process
+* Decisions
+* Alternatives
+* Failures
+* Corrections
+* Feedback
+* Successful solutions
+
+---
+
+# 3. PRIMARY V0.1 OBJECTIVE
+
+Do NOT attempt to build the complete AI architect initially.
+
+The first version must prove this loop:
+
+```text
+USER
+ ↓
+TEXT REQUEST
+ ↓
+LLM
+ ↓
+DESIGN INTENT
+ ↓
+MODELING PLAN
+ ↓
+MODELING SKILLS
+ ↓
+RHINO TOOL CALLS
+ ↓
+RHINO GEOMETRY
+ ↓
+GEOMETRY VALIDATION
+ ↓
+RESULT
+ ↓
+USER FEEDBACK
+ ↓
+AI CORRECTION
+ ↓
+UPDATED MODEL
+ ↓
+STORE EXPERIENCE
+```
+
+Example:
+
+User:
+
+> Create a 5m × 4m room with 200mm walls, a 900mm door on the south wall and a 1500mm window on the east wall.
+
+The AI should:
+
+1. Parse the request.
+2. Identify units.
+3. Identify geometry.
+4. Create a modeling plan.
+5. Call the appropriate modeling skills.
+6. Create the geometry in Rhino.
+7. Validate it.
+8. Report the result.
+9. Allow the user to modify it.
+
+---
+
+# 4. SYSTEM ARCHITECTURE
+
+The proposed architecture:
+
+```text
+                         USER
+                           │
+                           ▼
+                  CHAT / RHINO UI
+                           │
+                           ▼
+                    AI ORCHESTRATOR
+                           │
+             ┌─────────────┼──────────────┐
+             ▼             ▼              ▼
+          PLANNER       MEMORY         KNOWLEDGE
+             │             │              │
+             └─────────────┼──────────────┘
+                           │
+                           ▼
+                    MODELING SKILLS
+                           │
+                           ▼
+                     TOOL EXECUTOR
+                           │
+                           ▼
+                    RHINO / GRASSHOPPER
+                           │
+                           ▼
+                    VALIDATION ENGINE
+                           │
+                           ▼
+                      USER FEEDBACK
+                           │
+                           ▼
+                     EXPERIENCE DB
+```
+
+---
+
+# 5. MAJOR SYSTEM COMPONENTS
+
+Build the project as modular components.
+
+## Component A — User Interface
+
+Initial interface can be a simple VS Code development interface / command-line interface.
+
+Eventually:
+
+* Rhino panel
+* Chat interface
+* Command interface
+* Visual feedback
+* Model selection
+* Generated alternatives
+* Feedback controls
+
+---
+
+# 6. COMPONENT B — AI ORCHESTRATOR
+
+The orchestrator is the brain responsible for deciding:
+
+* What the user wants.
+* What information is missing.
+* Which knowledge is relevant.
+* Which modeling skill should be used.
+* Which Rhino tools should be called.
+* Whether validation is required.
+* Whether the result is successful.
+* Whether another iteration is necessary.
+
+It should NOT directly manipulate Rhino geometry wherever possible.
+
+Instead:
+
+```text
+LLM
+ ↓
+Structured plan
+ ↓
+Skill selection
+ ↓
+Tool call
+ ↓
+Rhino
+```
+
+---
+
+# 7. COMPONENT C — FOUNDATION MODEL
+
+Do not train an LLM from scratch.
+
+Build the initial system around an existing capable model with:
+
+* Tool calling
+* Structured output
+* Long context
+* Code generation
+* Reasoning
+* Vision capability where available
+
+The model provider should be configurable.
+
+Create an abstraction:
+
+```text
+ModelProvider
+├── OpenAI
+├── Anthropic
+├── Google
+├── Local/Open Source
+└── Future Providers
+```
+
+Do not hard-code the entire application to one model.
+
+---
+
+# 8. MODEL CONFIGURATION
+
+Create:
+
+```text
+config/models.yaml
+```
+
+Example structure:
+
+```yaml
+provider:
+  name: ""
+
+models:
+  reasoning:
+    name: ""
+  vision:
+    name: ""
+  video:
+    name: ""
+
+parameters:
+  temperature: 0.2
+  max_tokens: 0
+```
+
+Do not put API keys in source code.
+
+Use:
+
+```text
+.env
+```
+
+and environment variables.
+
+Add:
+
+```text
+.env.example
+```
+
+---
+
+# 9. COMPONENT D — MODELING SKILL SYSTEM
+
+This is one of the most important parts of the project.
+
+Do not make the LLM generate arbitrary Rhino code for every task.
+
+Create reusable modeling skills.
+
+Examples:
+
+```text
+create_point
+create_line
+create_curve
+create_surface
+create_extrusion
+create_brep
+create_wall
+create_floor
+create_roof
+create_door
+create_window
+create_column
+create_beam
+create_stair
+create_room
+create_building_mass
+create_facade
+create_panel
+create_site
+```
+
+Each skill should define:
+
+```json
+{
+  "skill_id": "",
+  "name": "",
+  "description": "",
+  "inputs": [],
+  "outputs": [],
+  "parameters": {},
+  "preconditions": [],
+  "operations": [],
+  "validation": [],
+  "failure_modes": []
+}
+```
+
+---
+
+# 10. FIRST MODELING SKILLS
+
+Implement these first:
+
+### Geometry
+
+1. Point
+2. Line
+3. Curve
+4. Rectangle
+5. Circle
+6. Surface
+7. Extrusion
+8. Brep
+
+### Architecture
+
+9. Wall
+10. Floor
+
+Then:
+
+11. Door
+12. Window
+13. Room
+14. Column
+15. Beam
+16. Roof
+17. Stair
+18. Building mass
+
+Do not implement dozens of skills before proving the architecture.
+
+---
+
+# 11. RHINO INTEGRATION
+
+Research and select the appropriate Rhino integration method.
+
+Investigate:
+
+* RhinoCommon
+* Rhino Python
+* Rhino C#
+* Rhino.Compute
+* Grasshopper API
+* Rhino MCP / MCP-compatible workflows
+* Rhino plugin architecture
+
+The implementation should use the most stable supported approach available for the target Rhino version.
+
+Create an abstraction:
+
+```text
+RhinoAdapter
+```
+
+Possible methods:
+
+```text
+create_point()
+create_curve()
+create_surface()
+create_brep()
+delete_object()
+modify_object()
+move_object()
+rotate_object()
+copy_object()
+measure_object()
+validate_geometry()
+get_selected_objects()
+get_document_units()
+get_document_objects()
+```
+
+---
+
+# 12. RHINO TOOL LAYER
+
+The AI should see a controlled set of tools.
+
+Example:
+
+```json
+{
+  "name": "create_wall",
+  "description": "Create a wall from a baseline curve",
+  "parameters": {
+    "curve": {},
+    "height": {},
+    "thickness": {}
+  }
+}
+```
+
+The LLM should never need to know the internal implementation of the tool.
+
+It only needs to know:
+
+* What the tool does.
+* What inputs it requires.
+* What it returns.
+* What errors may occur.
+
+---
+
+# 13. TOOL EXECUTION PIPELINE
+
+Use:
+
+```text
+LLM
+ ↓
+Tool selection
+ ↓
+Parameter validation
+ ↓
+Permission check
+ ↓
+Rhino execution
+ ↓
+Result
+ ↓
+Geometry validation
+ ↓
+Return result to LLM
+```
+
+Example:
+
+```text
+create_wall(
+    length=5000,
+    height=3000,
+    thickness=200
+)
+```
+
+The Rhino adapter performs the actual operation.
+
+---
+
+# 14. GEOMETRY VALIDATION
+
+The system must not assume that successful code execution means successful geometry.
+
+Create a validation layer.
+
+Check:
+
+* Valid Brep
+* Closed solids
+* Self intersections
+* Duplicate objects
+* Zero-length curves
+* Invalid surfaces
+* Object dimensions
+* Intersections
+* Units
+* Expected object count
+* Bounding box
+* Required relationships
+
+Example:
+
+```text
+CREATE WALL
+     ↓
+RHINO RESULT
+     ↓
+VALIDATE
+     ├── valid
+     └── invalid
+           ↓
+        diagnose
+           ↓
+        correct
+```
+
+---
+
+# 15. DESIGN PLANNER
+
+Before geometry creation, the AI should produce a structured plan.
+
+Example:
+
+```json
+{
+  "task": "Create a simple room",
+  "intent": "Rectangular room with openings",
+  "units": "mm",
+  "steps": [
+    {
+      "skill": "create_rectangle",
+      "parameters": {}
+    },
+    {
+      "skill": "create_wall",
+      "parameters": {}
+    },
+    {
+      "skill": "create_door",
+      "parameters": {}
+    }
+  ],
+  "validation": [
+    "check_dimensions",
+    "check_closed_geometry"
+  ]
+}
+```
+
+The plan should be inspectable.
+
+---
+
+# 16. MEMORY SYSTEM
+
+The AI needs several types of memory.
+
+Do not store everything as one generic memory.
+
+Create:
+
+```text
+SHORT-TERM CONTEXT
+LONG-TERM KNOWLEDGE
+USER PROJECT MEMORY
+SKILL MEMORY
+FAILURE MEMORY
+FEEDBACK MEMORY
+```
+
+---
+
+# 17. PROJECT MEMORY
+
+Store information about the current Rhino project:
+
+```json
+{
+  "project_id": "",
+  "units": "mm",
+  "site": {},
+  "building_type": "",
+  "design_intent": "",
+  "constraints": [],
+  "selected_objects": [],
+  "parameters": {},
+  "design_history": []
+}
+```
+
+---
+
+# 18. FAILURE MEMORY
+
+Every significant failure should potentially become structured data.
+
+Schema:
+
+```json
+{
+  "task": "",
+  "attempt": "",
+  "error": "",
+  "failure_type": "",
+  "diagnosis": "",
+  "correction": "",
+  "successful_result": "",
+  "lesson": ""
+}
+```
+
+Failure categories:
+
+```text
+GEOMETRY
+CODE
+RHINO
+GRASSHOPPER
+SPATIAL
+ARCHITECTURAL
+CONSTRUCTION
+REGULATION
+FABRICATION
+USER_PREFERENCE
+```
+
+---
+
+# 19. FEEDBACK SYSTEM
+
+Allow feedback such as:
+
+```text
+Accept
+Reject
+Modify
+Wrong dimension
+Wrong geometry
+Wrong planning
+Wrong style
+Too complex
+Too simple
+Too heavy
+Too dense
+Not buildable
+```
+
+But also allow natural-language feedback.
+
+Example:
+
+> "The facade is too aggressive. Keep the same geometry but make the openings more subtle."
+
+The AI should convert this into structured information.
+
+---
+
+# 20. LEARNING FROM FEEDBACK
+
+The system should initially NOT automatically fine-tune the foundation model.
+
+Instead:
+
+```text
+USER FEEDBACK
+ ↓
+STRUCTURED EXPERIENCE
+ ↓
+MEMORY
+ ↓
+RETRIEVAL
+ ↓
+FUTURE DECISION
+```
+
+This is safer and easier to iterate.
+
+Fine-tuning can be considered later once enough high-quality examples exist.
+
+---
+
+# 21. KNOWLEDGE BASE
+
+The system needs an architectural knowledge base.
+
+Categories:
+
+```text
+Architecture
+Spatial Planning
+Building Components
+Construction
+Materials
+Regulations
+Fabrication
+3D Printing
+Computational Design
+Grasshopper
+Rhino
+Architectural History
+Contemporary Architecture
+Design Trends
+```
+
+---
+
+# 22. RAG SYSTEM
+
+Implement Retrieval-Augmented Generation.
+
+Basic workflow:
+
+```text
+USER QUESTION
+      ↓
+QUERY EMBEDDING
+      ↓
+VECTOR SEARCH
+      ↓
+RELEVANT KNOWLEDGE
+      ↓
+LLM
+      ↓
+ANSWER / ACTION
+```
+
+Use RAG for:
+
+* Documentation
+* Regulations
+* Architecture research
+* Rhino documentation
+* Grasshopper documentation
+* Construction information
+* Project-specific knowledge
+
+---
+
+# 23. DATABASE ARCHITECTURE
+
+Do not rely entirely on a vector database.
+
+Recommended conceptual architecture:
+
+```text
+PostgreSQL
+    +
+pgvector
+    +
+Knowledge Graph
+    +
+Object Storage
+```
+
+### PostgreSQL
+
+Use for:
+
+* Metadata
+* Projects
+* Users
+* Skills
+* Rules
+* Feedback
+* Failures
+* Dataset metadata
+
+### pgvector
+
+Use for:
+
+* Semantic retrieval
+* Documents
+* Architectural knowledge
+* Examples
+
+### Knowledge graph
+
+Use for relationships.
+
+Example:
+
+```text
+ROOM
+ ↓
+HAS_FUNCTION
+ ↓
+BEDROOM
+ ↓
+HAS_REQUIREMENT
+ ↓
+DIMENSION
+```
+
+---
+
+# 24. KNOWLEDGE GRAPH
+
+Eventually represent:
+
+```text
+Building
+ ├── contains → Space
+ ├── uses → Material
+ ├── has → Structure
+ ├── has → Facade
+ └── follows → Regulation
+```
+
+And:
+
+```text
+Design intention
+       ↓
+Design strategy
+       ↓
+Parametric method
+       ↓
+Grasshopper operation
+       ↓
+Rhino geometry
+```
+
+---
+
+# 25. ARCHITECTURAL SPATIAL REASONING
+
+This is a major future capability.
+
+The AI should understand:
+
+* Adjacency
+* Circulation
+* Hierarchy
+* Public/private
+* Service circulation
+* Orientation
+* Daylight
+* Ventilation
+* Views
+* Privacy
+* Human scale
+* Functional relationships
+
+Example:
+
+```text
+Bedroom
+ ↓
+Needs privacy
+ ↓
+Should not directly connect to public entrance
+ ↓
+Requires circulation
+ ↓
+Requires appropriate dimensions
+ ↓
+Requires daylight/ventilation
+```
+
+The AI should reason before drawing.
+
+---
+
+# 26. DIMENSIONAL INTELLIGENCE
+
+Create structured dimensional knowledge.
+
+Every rule should contain context.
+
+```json
+{
+  "element": "stair",
+  "parameter": "riser",
+  "value": "",
+  "unit": "mm",
+  "building_type": "",
+  "occupancy": "",
+  "jurisdiction": "",
+  "source": "",
+  "edition": "",
+  "effective_date": ""
+}
+```
+
+Do not hard-code universal architectural dimensions.
+
+---
+
+# 27. RULE ENGINE
+
+Separate:
+
+```text
+REGULATION
+STANDARD
+BEST PRACTICE
+DESIGN PRINCIPLE
+COMMON PRACTICE
+EXPERIMENTAL IDEA
+```
+
+The AI must be able to say internally:
+
+> This is a legal/code requirement.
+
+versus:
+
+> This is a recommended architectural practice.
+
+versus:
+
+> This is simply a design option.
+
+---
+
+# 28. MULTIMODAL ARCHITECTURE
+
+Future versions should support:
+
+```text
+TEXT
+IMAGE
+SKETCH
+VIDEO
+3DM
+GRASSHOPPER
+PDF
+CAD
+```
+
+Architecture:
+
+```text
+             MULTIMODAL INPUT
+                    │
+        ┌───────────┼───────────┐
+        ▼           ▼           ▼
+       TEXT       IMAGE       VIDEO
+        │           │           │
+        └───────────┼───────────┘
+                    ▼
+             COMMON CONTEXT
+                    │
+                    ▼
+              AI PLANNER
+```
+
+---
+
+# 29. VIDEO LEARNING
+
+Video is particularly important for learning modeling workflows.
+
+The system should eventually process:
+
+* Rhino tutorials
+* Grasshopper tutorials
+* Architectural lectures
+* Computational design tutorials
+* Construction videos
+* Fabrication videos
+* 3D printing videos
+
+Pipeline:
+
+```text
+VIDEO
+ ↓
+TRANSCRIPTION
+ ↓
+OCR
+ ↓
+SCREEN UNDERSTANDING
+ ↓
+ACTION RECOGNITION
+ ↓
+CAD OPERATION DETECTION
+ ↓
+DESIGN REASONING
+ ↓
+TRAINING EXAMPLE
+```
+
+---
+
+# 30. VIDEO DATA MODEL
+
+Example:
+
+```json
+{
+  "video_id": "",
+  "start": "",
+  "end": "",
+  "software": "",
+  "task": "",
+  "spoken_instruction": "",
+  "visible_action": "",
+  "cad_operation": "",
+  "parameters": {},
+  "before_state": "",
+  "after_state": "",
+  "reasoning": "",
+  "result": "",
+  "source": ""
+}
+```
+
+---
+
+# 31. VIDEO MODELS VS CAD MODELS
+
+Do not assume a video-generation model is automatically a CAD-generation model.
+
+Separate capabilities:
+
+```text
+VIDEO UNDERSTANDING
+VIDEO GENERATION
+VISION REASONING
+ARCHITECTURAL REASONING
+CAD GENERATION
+CAD EXECUTION
+```
+
+A video-capable model can contribute process understanding.
+
+The Rhino/CAD system remains responsible for precise geometry.
+
+---
+
+# 32. ARCHITECTURAL TREND LEARNING
+
+Create a future process for monitoring new architecture.
+
+Potential sources:
+
+* Architecture publications
+* Research papers
+* Competitions
+* Architecture firms
+* Material innovation
+* Computational design research
+* Fabrication research
+
+The AI should extract:
+
+```text
+Project
+ ↓
+Design characteristics
+ ↓
+Design strategy
+ ↓
+Materials
+ ↓
+Technology
+ ↓
+Computational method
+ ↓
+Potential reusable principle
+```
+
+It should NOT blindly copy projects.
+
+---
+
+# 33. CONSTRUCTION INTELLIGENCE
+
+The future AI should understand:
+
+* Concrete
+* Steel
+* Timber
+* Masonry
+* Glass
+* Aluminium
+* Stone
+* Prefabrication
+* Modular construction
+* Robotic fabrication
+* 3D printing
+
+For each system understand:
+
+* Geometry
+* Dimensions
+* Tolerances
+* Materials
+* Connections
+* Sequencing
+* Fabrication
+* Transportation
+* Assembly
+
+---
+
+# 34. 3D CONCRETE PRINTING
+
+A future specialized module should understand:
+
+* Printer envelope
+* Nozzle size
+* Layer height
+* Layer width
+* Wall thickness
+* Print speed
+* Reinforcement
+* Openings
+* Panelization
+* Connections
+* Tolerances
+* Cracking
+* Transportation
+* Assembly
+* Toolpath
+
+Potential workflow:
+
+```text
+ARCHITECTURAL MODEL
+       ↓
+PRINTABILITY ANALYSIS
+       ↓
+PANELIZATION
+       ↓
+PRINT PATH
+       ↓
+FABRICATION MODEL
+       ↓
+SITE ASSEMBLY
+```
+
+---
+
+# 35. DATASET STRATEGY
+
+Do not immediately try to collect everything.
+
+Create a dataset catalog first.
+
+Categories:
+
+```text
+CAD
+Architecture
+Grasshopper
+Images
+Video
+Construction
+Regulations
+Fabrication
+3D Printing
+Failures
+Feedback
+Design Trends
+```
+
+Every dataset must have:
+
+```text
+Name
+Source
+URL
+License
+Size
+Format
+Samples
+Quality
+Commercial-use status
+Training-use status
+Architecture relevance
+Rhino relevance
+Notes
+```
+
+---
+
+# 36. DATA PROCESSING PIPELINE
+
+Use:
+
+```text
+RAW
+ ↓
+LICENSE CHECK
+ ↓
+VALIDATION
+ ↓
+DEDUPLICATION
+ ↓
+NORMALIZATION
+ ↓
+METADATA
+ ↓
+ANNOTATION
+ ↓
+QUALITY CONTROL
+ ↓
+TRAIN / VALIDATION / TEST
+```
+
+Never modify raw data.
+
+---
+
+# 37. DATASET DIRECTORY
+
+Use:
+
+```text
+data/
+├── raw/
+├── processed/
+├── metadata/
+├── cad/
+├── architecture/
+├── grasshopper/
+├── video/
+├── image/
+├── construction/
+├── regulations/
+├── fabrication/
+├── failures/
+└── feedback/
+```
+
+---
+
+# 38. LEGAL / LICENSE SYSTEM
+
+The application should record:
+
+* Dataset license
+* Source
+* Copyright
+* Commercial permission
+* Training permission
+* Redistribution permission
+* Attribution
+* Restrictions
+
+Do not download or train on datasets merely because they are publicly accessible.
+
+---
+
+# 39. EVALUATION SYSTEM
+
+Create a benchmark.
+
+### Level 1 — Geometry
+
+```text
+Create a 5m line.
+Create a 5m × 4m rectangle.
+Create a 3m wall.
+```
+
+### Level 2 — Architecture
+
+```text
+Create a room.
+Create a two-room layout.
+Create a simple house.
+```
+
+### Level 3 — Spatial reasoning
+
+```text
+Arrange bedroom, living room and kitchen according to specified relationships.
+```
+
+### Level 4 — Parametric design
+
+```text
+Create an attractor-controlled facade.
+```
+
+### Level 5 — Modification
+
+```text
+Move the kitchen 1m east.
+```
+
+### Level 6 — Failure recovery
+
+```text
+Fix invalid geometry.
+```
+
+### Level 7 — Feedback
+
+```text
+Make the facade lighter and reduce panel depth.
+```
+
+---
+
+# 40. EVALUATION METRICS
+
+Measure:
+
+### Geometry accuracy
+
+Does the geometry match the request?
+
+### Constraint satisfaction
+
+Are required dimensions respected?
+
+### Validity
+
+Is Rhino geometry valid?
+
+### Architectural reasoning
+
+Does the solution satisfy the intended spatial relationships?
+
+### Editability
+
+Can the user modify the generated model?
+
+### Recovery
+
+Can the AI fix failures?
+
+### Feedback interpretation
+
+Does it correctly understand user corrections?
+
+### Reproducibility
+
+Can the same task be executed consistently?
+
+---
+
+# 41. SECURITY
+
+Never allow the LLM unrestricted system access.
+
+Use:
+
+```text
+LLM
+ ↓
+Tool Registry
+ ↓
+Validation
+ ↓
+Permission
+ ↓
+Execution
+```
+
+Avoid arbitrary shell execution from model output.
+
+Protect:
+
+* API keys
+* File system
+* Rhino documents
+* User data
+* External APIs
+* Database credentials
+
+---
+
+# 42. PROJECT DIRECTORY
+
+Recommended VS Code structure:
+
+```text
+AI-RHINO-ARCHITECT/
+│
+├── README.md
+├── .env.example
+├── .gitignore
+├── package.json / requirements.txt
+│
+├── docs/
+│   ├── architecture.md
+│   ├── roadmap.md
+│   ├── research.md
+│   ├── api.md
+│   └── development.md
+│
+├── apps/
+│   ├── agent/
+│   ├── api/
+│   └── ui/
+│
+├── rhino/
+│   ├── plugin/
+│   ├── adapters/
+│   ├── tools/
+│   └── validation/
+│
+├── grasshopper/
+│   ├── components/
+│   ├── generators/
+│   └── tools/
+│
+├── ai/
+│   ├── orchestrator/
+│   ├── planners/
+│   ├── prompts/
+│   ├── providers/
+│   ├── memory/
+│   └── evaluation/
+│
+├── knowledge/
+│   ├── documents/
+│   ├── rules/
+│   ├── skills/
+│   ├── concepts/
+│   ├── precedents/
+│   └── failures/
+│
+├── data/
+│   ├── raw/
+│   ├── processed/
+│   ├── metadata/
+│   └── datasets/
+│
+├── database/
+│   ├── migrations/
+│   ├── schemas/
+│   └── seeds/
+│
+├── tests/
+│   ├── unit/
+│   ├── integration/
+│   ├── rhino/
+│   └── evaluation/
+│
+└── scripts/
+    ├── ingestion/
+    ├── processing/
+    └── evaluation/
+```
+
+---
+
+# 43. TECHNOLOGY LAYERS
+
+Do not lock implementation to one language unnecessarily.
+
+A practical architecture may contain:
+
+```text
+AI / Backend
+Python or TypeScript
+
+Rhino Plugin
+C# / RhinoCommon
+
+Grasshopper
+C# / Python / Grasshopper SDK
+
+Database
+PostgreSQL
+
+Vector Search
+pgvector
+
+Knowledge Graph
+Neo4j or PostgreSQL graph representation
+
+Object Storage
+Local initially / S3-compatible later
+
+Frontend
+Web UI initially
+Rhino panel later
+```
+
+Kilo AI should research current Rhino SDK requirements before finalizing this stack.
+
+---
+
+# 44. DEVELOPMENT METHODOLOGY
+
+Kilo AI must work incrementally.
+
+DO NOT generate the entire application at once.
+
+Use:
+
+```text
+RESEARCH
+ ↓
+DESIGN
+ ↓
+IMPLEMENT
+ ↓
+TEST
+ ↓
+DOCUMENT
+ ↓
+COMMIT
+ ↓
+NEXT FEATURE
+```
+
+Every feature should have:
+
+* Specification
+* Implementation
+* Test
+* Documentation
+* Error handling
+
+---
+
+# 45. DEVELOPMENT PHASES
+
+## PHASE 0 — Research
+
+Research:
+
+* Rhino API
+* Grasshopper API
+* AI models
+* MCP
+* CAD AI
+* Existing competitors
+* Datasets
+
+Deliver:
+
+```text
+docs/research/
+```
+
+---
+
+## PHASE 1 — Rhino Connection
+
+Build:
+
+```text
+AI ↔ Rhino
+```
+
+Prove that AI can:
+
+* Connect
+* Read document
+* Read units
+* Read objects
+* Create geometry
+* Delete geometry
+* Modify geometry
+
+---
+
+## PHASE 2 — Basic Modeling Skills
+
+Implement:
+
+* Point
+* Line
+* Rectangle
+* Curve
+* Surface
+* Extrusion
+* Wall
+* Floor
+
+---
+
+## PHASE 3 — Agent Planner
+
+Implement:
+
+```text
+Prompt
+ ↓
+Plan
+ ↓
+Tools
+ ↓
+Rhino
+```
+
+---
+
+## PHASE 4 — Validation
+
+Add:
+
+* Geometry validation
+* Dimension validation
+* Tool errors
+* Recovery
+
+---
+
+## PHASE 5 — Memory
+
+Add:
+
+* Project memory
+* Skill memory
+* Failure memory
+* Feedback memory
+
+---
+
+## PHASE 6 — Architecture Knowledge
+
+Add:
+
+* Spatial reasoning
+* Building components
+* Dimensions
+* Basic regulations
+
+---
+
+## PHASE 7 — Grasshopper
+
+Add:
+
+* Component knowledge
+* Parametric generation
+* Grasshopper definition generation
+* Parameter modification
+
+---
+
+## PHASE 8 — Vision
+
+Add:
+
+```text
+IMAGE
+ ↓
+UNDERSTANDING
+ ↓
+MASSING / GEOMETRY
+```
+
+---
+
+## PHASE 9 — Video
+
+Add:
+
+```text
+VIDEO
+ ↓
+PROCESS UNDERSTANDING
+ ↓
+CAD SKILLS
+```
+
+---
+
+## PHASE 10 — Continuous Learning
+
+Add:
+
+* New architecture
+* User feedback
+* Failure learning
+* Trend monitoring
+
+---
+
+# 46. V0.1 ACCEPTANCE TEST
+
+V0.1 is successful only if the following works.
+
+### Test 1
+
+User:
+
+> Create a 5m × 4m rectangle.
+
+Expected:
+
+* AI understands dimensions.
+* Correct Rhino units.
+* Rectangle generated.
+
+### Test 2
+
+User:
+
+> Extrude this 3m.
+
+Expected:
+
+* AI identifies selected geometry.
+* Generates extrusion.
+* Validates result.
+
+### Test 3
+
+User:
+
+> Create a 200mm thick, 3m high wall along this line.
+
+Expected:
+
+* Wall generated correctly.
+
+### Test 4
+
+User:
+
+> Make the wall 250mm thick.
+
+Expected:
+
+* Existing wall modified.
+
+### Test 5
+
+User:
+
+> This wall is too thick. Make it 150mm.
+
+Expected:
+
+* AI interprets feedback.
+* Updates geometry.
+
+### Test 6
+
+Introduce a geometry failure.
+
+Expected:
+
+* AI detects failure.
+* Diagnoses.
+* Attempts correction.
+
+---
+
+# 47. V0.1 SHOULD NOT INCLUDE
+
+Do NOT initially implement:
+
+* Full autonomous architectural design
+* Full building-code engine
+* Video training
+* Foundation-model training
+* Large-scale fine-tuning
+* Autonomous internet learning
+* Complete BIM generation
+* Complete structural engineering
+* Complete MEP design
+
+These are later phases.
+
+---
+
+# 48. V1 TARGET
+
+V1 should eventually support:
+
+```text
+Natural language
+      +
+Architectural reasoning
+      +
+Spatial planning
+      +
+Rhino
+      +
+Grasshopper
+      +
+Vision
+      +
+Knowledge base
+      +
+Feedback
+      +
+Failure recovery
+```
+
+Example:
+
+> "Create a contemporary 2-bedroom courtyard house on this site. Keep the required setbacks, orient the living spaces toward the view, separate private and public zones, and create a parametric shaded facade."
+
+The AI should be able to:
+
+1. Understand the brief.
+2. Analyze the site.
+3. Develop spatial relationships.
+4. Generate massing.
+5. Create architectural elements.
+6. Create parametric facade logic.
+7. Validate geometry.
+8. Present alternatives.
+9. Receive feedback.
+10. Modify the design.
+
+---
+
+# 49. LONG-TERM VISION
+
+The mature system becomes:
+
+```text
+                    AI ARCHITECT
+                         │
+        ┌────────────────┼─────────────────┐
+        │                │                 │
+       TEXT             IMAGE             VIDEO
+        │                │                 │
+        └────────────────┼─────────────────┘
+                         ▼
+                DESIGN UNDERSTANDING
+                         │
+                         ▼
+                SPATIAL REASONING
+                         │
+                         ▼
+                  DESIGN STRATEGY
+                         │
+                         ▼
+                PARAMETRIC LOGIC
+                         │
+                         ▼
+                 MODELING SKILLS
+                         │
+                         ▼
+              RHINO + GRASSHOPPER
+                         │
+                         ▼
+                    VALIDATION
+                         │
+                 ┌───────┴───────┐
+                 ▼               ▼
+              SUCCESS          FAILURE
+                 │               │
+                 ▼               ▼
+             FEEDBACK        DIAGNOSIS
+                 │               │
+                 └───────┬───────┘
+                         ▼
+                    EXPERIENCE
+                         │
+                         ▼
+                  FUTURE LEARNING
+```
+
+---
+
+# 50. KILO AI OPERATING INSTRUCTIONS
+
+Kilo AI should follow these rules while developing the project.
+
+## Rule 1 — Research before implementation
+
+If a technical question concerns current Rhino APIs, AI APIs, MCP, model capabilities, or external libraries, verify current documentation before implementing.
+
+## Rule 2 — Do not hallucinate APIs
+
+Never invent:
+
+* Rhino methods
+* Grasshopper methods
+* MCP tools
+* AI APIs
+* package APIs
+
+Verify them.
+
+## Rule 3 — Keep components modular
+
+Do not create one giant application file.
+
+## Rule 4 — Keep AI provider independent
+
+Use provider interfaces.
+
+## Rule 5 — Never expose API keys
+
+Use environment variables.
+
+## Rule 6 — Validate generated geometry
+
+Never assume successful tool execution means valid geometry.
+
+## Rule 7 — Preserve user control
+
+The AI should propose or execute actions through controlled tools.
+
+## Rule 8 — Store structured experiences
+
+Do not save entire conversations as the only form of memory.
+
+Extract:
+
+* Task
+* Intent
+* Action
+* Result
+* Feedback
+* Failure
+* Correction
+
+## Rule 9 — Do not automatically fine-tune
+
+Build the dataset first.
+
+## Rule 10 — Do not hard-code architectural style
+
+The AI should be capable of exploring different architectural approaches.
+
+---
+
+# 51. REQUIRED DOCUMENTATION
+
+Kilo AI should create and maintain:
+
+```text
+README.md
+ARCHITECTURE.md
+DEVELOPMENT.md
+RESEARCH.md
+ROADMAP.md
+API.md
+DATABASE.md
+RHINO_INTEGRATION.md
+GRASSHOPPER_INTEGRATION.md
+AI_AGENT.md
+MEMORY.md
+KNOWLEDGE_BASE.md
+DATA_PIPELINE.md
+TESTING.md
+SECURITY.md
+LICENSE_DATA.md
+```
+
+---
+
+# 52. FINAL SUCCESS CRITERIA
+
+The project should eventually demonstrate:
+
+### Understanding
+
+AI understands architectural language.
+
+### Reasoning
+
+AI can develop a modeling strategy.
+
+### Execution
+
+AI can create accurate Rhino geometry.
+
+### Parametric intelligence
+
+AI can generate and modify Grasshopper logic.
+
+### Validation
+
+AI can detect geometry problems.
+
+### Feedback
+
+AI understands natural-language corrections.
+
+### Memory
+
+AI remembers useful project experience.
+
+### Failure recovery
+
+AI can diagnose and fix modeling failures.
+
+### Knowledge
+
+AI can retrieve relevant architectural and technical information.
+
+### Multimodal capability
+
+AI can eventually understand images and videos.
+
+### Continuous learning
+
+AI can incorporate validated new knowledge and trends.
+
+---
+
+# 53. FINAL DEVELOPMENT PRINCIPLE
+
+The goal is not:
+
+> **Build an LLM that knows Rhino commands.**
+
+The goal is:
+
+> **Build an AI system that understands architectural intent and uses Rhino as its precise computational design environment.**
+
+The distinction is fundamental.
+
+The LLM provides:
+
+```text
+Reasoning
+Planning
+Language
+Knowledge retrieval
+Decision making
+```
+
+The specialized systems provide:
+
+```text
+Rhino → Geometry
+Grasshopper → Parametric logic
+Database → Structured knowledge
+Vector DB → Semantic retrieval
+Knowledge graph → Relationships
+Rule engine → Constraints
+Validation engine → Verification
+Memory → Experience
+Video models → Process understanding
+Vision models → Visual understanding
+```
+
+Together they form the **AI Architectural Design Agent**.
+
+---
+
+# 54. IMMEDIATE KILO AI TASK
+
+Start with the following sequence.
+
+### STEP 1
+
+Create the repository structure.
+
+### STEP 2
+
+Create all architecture/documentation files.
+
+### STEP 3
+
+Research current Rhino integration options.
+
+### STEP 4
+
+Research current AI model/tool-calling options.
+
+### STEP 5
+
+Select the minimum technology stack for V0.1.
+
+### STEP 6
+
+Build a Rhino connection prototype.
+
+### STEP 7
+
+Implement the first modeling skill:
+
+```text
+create_rectangle
+```
+
+### STEP 8
+
+Implement:
+
+```text
+create_wall
+```
+
+### STEP 9
+
+Implement geometry validation.
+
+### STEP 10
+
+Implement natural-language → plan → tool execution.
+
+### STEP 11
+
+Implement feedback:
+
+```text
+"make it wider"
+"make the wall thinner"
+"move the door"
+```
+
+### STEP 12
+
+Store the interaction as structured experience.
+
+### STEP 13
+
+Create automated tests.
+
+### STEP 14
+
+Only after V0.1 works, begin expanding the modeling skill library.
+
+---
+
+# 55. FIRST DEMONSTRATION
+
+The first successful demonstration should look like this:
+
+```text
+USER:
+
+"Create a 6m x 4m room with
+200mm thick walls,
+3m height,
+one 900mm door on the south wall,
+and a 1500mm window on the east wall."
+
+                ↓
+
+             AI AGENT
+
+                ↓
+
+       UNDERSTAND REQUIREMENTS
+
+                ↓
+
+        CREATE MODELING PLAN
+
+                ↓
+
+          CALL RHINO SKILLS
+
+                ↓
+
+        ┌──────────────────┐
+        │     RHINO        │
+        │                  │
+        │   ┌──────────┐   │
+        │   │          │   │
+        │   │   ROOM   │   │
+        │   │          │   │
+        │   └──────────┘   │
+        └──────────────────┘
+
+                ↓
+
+             VALIDATE
+
+                ↓
+
+             USER:
+
+        "Make the window
+         2m instead."
+
+                ↓
+
+             AI AGENT
+
+                ↓
+
+         MODIFY EXISTING
+             GEOMETRY
+
+                ↓
+
+             VALIDATE
+
+                ↓
+
+             SAVE EXPERIENCE
+```
+
+This is the **minimum proof-of-concept** for the entire project.
+
+Once this works reliably, the system can progressively become much more sophisticated.
+
+---
+
+# 56. PROJECT NORTH STAR
+
+The final system should evolve toward:
+
+> **A multimodal AI architectural computational designer that can understand architectural intent, reason spatially, learn from architectural and computational-design processes, generate accurate parametric Rhino/Grasshopper geometry, validate construction and regulatory constraints, learn from failures and feedback, and continuously expand its design knowledge.**
+
+The first step is intentionally simple:
+
+**Text → Reason → Rhino → Validate → Feedback → Correct → Remember.**
+
+Everything else should be built on top of that foundation.

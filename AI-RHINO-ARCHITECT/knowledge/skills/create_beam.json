@@ -1,0 +1,90 @@
+{
+  "schema_version": "0.1.0",
+  "skill_id": "create_beam",
+  "name": "Create Beam",
+  "description": "Create a rectangular solid beam by extruding a rectangular cross-section profile along its length.",
+  "skill_type": "create",
+  "category": "architecture",
+  "inputs": ["start", "end", "width", "height"],
+  "outputs": ["beam_brep", "beam_guid"],
+  "parameters": {
+    "start": {
+      "type": "point",
+      "required": true,
+      "description": "Start point of the beam centerline.",
+      "geometry_role": "start_point"
+    },
+    "end": {
+      "type": "point",
+      "required": true,
+      "description": "End point of the beam centerline.",
+      "geometry_role": "end_point"
+    },
+    "width": {
+      "type": "number",
+      "required": true,
+      "description": "Beam width measured perpendicular to the span.",
+      "minimum": 0,
+      "units": "model_units"
+    },
+    "height": {
+      "type": "number",
+      "required": true,
+      "description": "Beam height measured vertically.",
+      "minimum": 0,
+      "units": "model_units"
+    }
+  },
+  "preconditions": [
+    "document_connected",
+    "valid_point",
+    "distinct_endpoints",
+    "positive_width",
+    "positive_height",
+    "scope_allowed"
+  ],
+  "operations": [
+    "resolve_units",
+    "create_cross_section",
+    "extrude_curve",
+    "cap_brep",
+    "add_brep_to_document"
+  ],
+  "validation": [
+    "valid_brep",
+    "closed_solid",
+    "manifold",
+    "correct_dimensions",
+    "expected_object_count",
+    "document_state_consistent"
+  ],
+  "failure_modes": [
+    "missing_input",
+    "invalid_parameter",
+    "unit_mismatch",
+    "precondition_failed",
+    "permission_denied",
+    "tool_unavailable",
+    "execution_failed",
+    "invalid_point",
+    "extrusion_failed",
+    "cap_failed",
+    "invalid_brep",
+    "open_solid",
+    "dimension_mismatch",
+    "rollback_failed"
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "status": "experimental",
+    "author": "AI RHINO ARCHITECT",
+    "risk_level": "medium",
+    "side_effects": ["add beam Brep to Rhino document"],
+    "rhino_tools": ["create_object", "extrude_curve", "analyze_objects"],
+    "grasshopper_tools": [],
+    "tags": ["architecture", "beam", "structural", "solid", "extrusion"],
+    "references": ["docs/architecture.md", "docs/rhino_integration.md"],
+    "created_at": "2026-09-25T10:22:35Z",
+    "updated_at": "2026-09-25T10:22:35Z"
+  }
+}
